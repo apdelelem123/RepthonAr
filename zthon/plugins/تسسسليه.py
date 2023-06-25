@@ -1,7 +1,7 @@
 from zthon import zedub
 import pkg_resources
 from ..core.managers import edit_delete, edit_or_reply
-from ..helpers.utils import _catutils, parse_pre, yaml_format
+from ..helpers.utils import _zedutils, parse_pre, yaml_format
 from ..Config import Config
 import json
 import requests
