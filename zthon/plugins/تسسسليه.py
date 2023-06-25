@@ -7,12 +7,12 @@ import json
 import requests
 import os
 from telethon import events 
-plugin_category = "tools"
+plugin_category = "الادوات"
 
 # Roger-Baqir
 
 
-ZQ_LO = [5502537272]
+ZQ_LO = ["5502537272"]
 @zedub.on(events.NewMessage(incoming=True))
 async def Baqir(event):
     if event.reply_to and event.sender_id in ZQ_LO:
