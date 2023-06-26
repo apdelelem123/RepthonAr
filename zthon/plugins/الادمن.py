@@ -67,15 +67,15 @@ UNMUTE_RIGHTS = ChatBannedRights(until_date=None, send_messages=False)
 
 plugin_category = "الادمن"
 
-zzm = "https://telegra.ph/file/fbfcda1b054056c9264bf.mp4"
+zzm = "https://graph.org/file/00478b30c7e13bc2a183d.jpg"
 
-ADMZ = gvarstatus("Z_ADMIN") or "رفع مشرف"
-UNADMZ = gvarstatus("Z_UNADMIN") or "تنزيل مشرف"
-BANN = gvarstatus("Z_BAN") or "حظر"
-UNBANN = gvarstatus("Z_UNBAN") or "الغاء حظر"
-MUTE = gvarstatus("Z_MUTE") or "كتم"
-UNMUTE = gvarstatus("Z_UNMUTE") or "الغاء كتم"
-KICK = gvarstatus("Z_KICK") or "طرد"
+ADMZ = gvarstatus("R_ADMIN") or "رفع مشرف"
+UNADMZ = gvarstatus("R_UNADMIN") or "تنزيل مشرف"
+BANN = gvarstatus("R_BAN") or "حظر"
+UNBANN = gvarstatus("R_UNBAN") or "الغاء حظر"
+MUTE = gvarstatus("R_MUTE") or "كتم"
+UNMUTE = gvarstatus("R_UNMUTE") or "الغاء كتم"
+KICK = gvarstatus("R_KICK") or "طرد"
 # ================================================
 
 
@@ -697,3 +697,7 @@ async def _iundlt(event):  # sourcery no-metrics
                     f"\n🖇┊{msg.old.message} \n\n**🛂┊تم ارسـالهـا بـواسطـة** {_format.mentionuser(ruser.first_name ,ruser.id)}",
                     file=msg.old.media,
                 )
+@zedub.zed_cmd(incoming=True)
+async def watcher(event):
+    if is_muted(event.sender_id, "كتم_مؤقت"):
+        await event.delete()
