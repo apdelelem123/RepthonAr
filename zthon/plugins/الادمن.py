@@ -67,7 +67,8 @@ UNMUTE_RIGHTS = ChatBannedRights(until_date=None, send_messages=False)
 
 plugin_category = "الادمن"
 
-zzm = "https://graph.org/file/00478b30c7e13bc2a183d.jpg"
+repthon_mute = "https://graph.org/file/00478b30c7e13bc2a183d.jpg"
+repthon_ban = "https://graph.org/file/151f4feaad21a801d040d.jpg"
 
 ADMZ = gvarstatus("R_ADMIN") or "رفع مشرف"
 UNADMZ = gvarstatus("R_UNADMIN") or "تنزيل مشرف"
@@ -304,13 +305,19 @@ async def _ban_person(event):
         return await zedevent.edit(NO_PERM)
     reply = await event.get_reply_message()
     if reason:
-        await zedevent.edit(
-            f"**- المستخـدم :** {_format.mentionuser(user.first_name ,user.id)}  \n**- تـم حظـࢪه بنجـاح ☑️**\n\n**- السـبب :** `{reason}`"
+        await event.client.send_file(
+          event.chat_id,
+          repthon_ban,  
+          caption=f"**- المستخـدم :** {_format.mentionuser(user.first_name ,user.id)}  \n**- تـم حظـࢪه بنجـاح ☑️**\n\n**- السـبب :** `{reason}`"
         )
-    else:
-        await zedevent.edit(
-            f"**- المستخـدم :** {_format.mentionuser(user.first_name ,user.id)}  \n**- تـم حظــࢪه بنجـاح ☑️**\n\n"
+        await event.delete()
+    else:    
+        await event.client.send_file(
+            event.chat_id,
+            repthon_mute,
+            caption=f"**- المستخـدم :** {_format.mentionuser(user.first_name ,user.id)}  \n**- تـم حظــࢪه بنجـاح ☑️**\n\n"
         )
+        await event.delete()
     if BOTLOG:
         if reason:
             await event.client.send_message(
@@ -446,14 +453,14 @@ async def startmute(event):
         if reason:
             await event.client.send_file(
                 event.chat_id,
-                zzm,
+                repthon_mute,
                 caption=f"**- المستخـدم :** {_format.mentionuser(user.first_name ,user.id)}  \n**- تـم كتمـه بنجـاح ☑️**\n\n**- السـبب :** {reason}",
             )
             await event.delete()
         else:
             await event.client.send_file(
                 event.chat_id,
-                zzm,
+                repthon_mute,
                 caption=f"**- المستخـدم :** {_format.mentionuser(user.first_name ,user.id)}  \n**- تـم كتمـه بنجـاح ☑️**\n\n",
             )
             await event.delete()
