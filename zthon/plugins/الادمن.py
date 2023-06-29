@@ -314,7 +314,7 @@ async def _ban_person(event):
     else:    
         await event.client.send_file(
             event.chat_id,
-            repthon_mute,
+            repthon_ban,
             caption=f"**- المستخـدم :** {_format.mentionuser(user.first_name ,user.id)}  \n**- تـم حظــࢪه بنجـاح ☑️**\n\n"
         )
         await event.delete()
