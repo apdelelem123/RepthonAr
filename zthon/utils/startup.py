@@ -120,9 +120,9 @@ async def mybot():
     ba_roger = f"[{ROGER}](tg://user?id={Narcissus})"
     f"ـ {ba_roger}"
     f"•⎆┊هــذا البــوت خــاص بـ {ba_roger} يمكـنك التواصــل معـه هـنا 🧸♥️"
-    zilbot = await zedub.tgbot.get_me()
-    bot_name = zilbot.first_name
-    botname = f"@{zilbot.username}"
+    babot = await zedub.tgbot.get_me()
+    bot_name = babot.first_name
+    botname = f"@{babot.username}"
     if bot_name.endswith("Assistant"):
         print("تم تشغيل البوت بنجــاح")
     else:
@@ -155,7 +155,7 @@ async def mybot():
             await asyncio.sleep(1)
             await bot.send_message("@BotFather", botname)
             await asyncio.sleep(1)
-            await bot.send_message("@BotFather", f"•⎆┊انـا البــوت المسـاعـد الخــاص بـ {zel_zal} \n•⎆┊بـواسطـتـي يمكـنك التواصــل مـع مـالكـي 🧸♥️\n•⎆┊قنـاة السـورس 🌐 @Repthon 🌐")
+            await bot.send_message("@BotFather", f"•⎆┊انـا البــوت المسـاعـد الخــاص بـ {ba_roger} \n•⎆┊بـواسطـتـي يمكـنك التواصــل مـع مـالكـي 🧸♥️\n•⎆┊قنـاة السـورس 🌐 @Repthon 🌐")
         except Exception as e:
             print(e)
 
