@@ -81,7 +81,7 @@ async def startupmessage():
         if BOTLOG:
             Config.ZEDUBLOGO = await zedub.tgbot.send_file(
                 BOTLOG_CHATID,
-                "https://graph.org/file/10b0a7b2056f3497455b9.jpg",
+                "https://graph.org/file/f367d5a4a6bf1fbfc99b9.mp4",
                 caption="**•⎆┊تـم بـدء تشغـيل سـورس ريبـــثون الخاص بك .. بنجاح 🧸♥️**",
                 buttons=[(Button.url("𝙍𝙀𝙋𝙏𝙃𝙊𝙉", "https://t.me/Repthon"),)],
             )
@@ -115,11 +115,11 @@ async def startupmessage():
 
 
 async def mybot():
-    ZELZAL = bot.me.first_name
-    Malath = bot.uid
-    zel_zal = f"[{ZELZAL}](tg://user?id={Malath})"
-    f"ـ {zel_zal}"
-    f"•⎆┊هــذا البــوت خــاص بـ {zel_zal} يمكـنك التواصــل معـه هـنا 🧸♥️"
+    ROGER = bot.me.first_name
+    Narcissus = bot.uid
+    ba_roger = f"[{ROGER}](tg://user?id={Narcissus})"
+    f"ـ {ba_roger}"
+    f"•⎆┊هــذا البــوت خــاص بـ {ba_roger} يمكـنك التواصــل معـه هـنا 🧸♥️"
     zilbot = await zedub.tgbot.get_me()
     bot_name = zilbot.first_name
     botname = f"@{zilbot.username}"
