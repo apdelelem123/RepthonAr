@@ -45,9 +45,9 @@ autophoto_path = os.path.join(os.getcwd(), "zthon", "photo_pfp.png")
 digitalpfp = Config.DIGITAL_PIC
 ZED_FONT = gvarstatus("DEFAULT_PIC") or "zthon/helpers/styles/ZThon.ttf"
 zedfont = gvarstatus("DEFAULT_PIC") or "zthon/helpers/styles/ZThon.ttf"
-NAUTO = gvarstatus("Z_NAUTO") or "(الاسم تلقائي|اسم وقتي|اسم تلقائي)"
-PAUTO = gvarstatus("Z_PAUTO") or "(البروفايل تلقائي|الصورة الوقتية|صوره وقتيه|البروفايل)"
-BAUTO = gvarstatus("Z_BAUTO") or "(البايو تلقائي|بايو وقتي|نبذه وقتيه)"
+NAUTO = gvarstatus("R_NAUTO") or "(الاسم تلقائي|اسم وقتي|اسم تلقائي)"
+PAUTO = gvarstatus("R_PAUTO") or "(البروفايل تلقائي|الصورة الوقتية|صوره وقتيه|البروفايل)"
+BAUTO = gvarstatus("R_BAUTO") or "(البايو تلقائي|بايو وقتي|نبذه وقتيه)"
 
 
 async def digitalpicloop():
