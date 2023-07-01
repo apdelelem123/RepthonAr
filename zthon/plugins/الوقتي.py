@@ -87,7 +87,7 @@ async def digitalpicloop():
 async def autoname_loop():
     while AUTONAMESTART := gvarstatus("autoname") == "true":
         DM = time.strftime("%d-%m-%y")
-        HM = time.strftime("%I:%M")
+        HM = time.strftime("%I:%M:%S")
         for normal in HM:
             if normal in normzltext:
               namefont = namerzfont[normzltext.index(normal)]
