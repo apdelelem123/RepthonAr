@@ -1,9 +1,9 @@
 # @Repthon - Baqir
 # Copyright (C) 2022 Repthon . All Rights Reserved
 #< https://t.me/Repthon >
-# This file is a part of < https://github.com/rogerpq/Repthon-_-/ >
+# This file is a part of < https://github.com/RepthonArabic/RepthonAr/ >
 # PLease read the GNU Affero General Public License in
-# <https://www.github.com/rogerpq/Repthon-_-/blob/master/LICENSE/>.
+# <https://www.github.com/RepthonArabic/RepthonAr/blob/master/LICENSE/>.
 #كـود الصورة الوقتيه كتـابتي وتعديلـي من زمان ومتعوب عليها 
 #+ كـود زخـرفة الصورة الوقتيه
 #+ دددي لا ابلـع حســابك بـانـد بطـعـم الليمــون 🍋😹🤘
@@ -87,7 +87,7 @@ async def digitalpicloop():
 async def autoname_loop():
     while AUTONAMESTART := gvarstatus("autoname") == "true":
         DM = time.strftime("%d-%m-%y")
-        HM = time.strftime("%I:%M:%S")
+        HM = time.strftime("%I:%M")
         for normal in HM:
             if normal in normzltext:
               namefont = namerzfont[normzltext.index(normal)]
