@@ -39,7 +39,7 @@ async def _(event):
     async with event.client.conversation(chat) as conv:
         try:
             response = conv.wait_event(
-                events.NewMessage(incoming=True, from_users=1332941342)
+                events.NewMessage(incoming=True, from_users=193195)
             )
             await event.client.forward_messages(chat, reply_message)
             response = await response
