@@ -17,8 +17,8 @@ from . import BOTLOG, BOTLOG_CHATID
 plugin_category = "العروض"
 
 
-ZelzalWF_cmd = (
-    "𓆩 [𝗦𝗼𝘂𝗿𝗰𝗲 𝐑𝐄𝐏𝐓𝐇𝐎𝐍 𝗖𝗼𝗻𝗳𝗶𝗴 - اوامـر الـردود / والتـرحيب](t.me/Repthon) 𓆪\n\n"
+BaqirWF_cmd = (
+    "𓆩 [𝗦𝗼𝘂𝗿𝗰𝗲 𝗥𝗲𝗽𝘁𝗵𝗼𝗻 𝗖𝗼𝗻𝗳𝗶𝗴 - اوامـر الـردود / والتـرحيب](t.me/Repthon) 𓆪\n\n"
     "**✾╎قائـمه اوامـر الـردود 🦾 :** \n\n"
     "**⎞𝟏⎝** `.رد`\n"
     "**•• ⦇الامـر + اسـم الـرد بالـرد ع كلمـة الـرد او بالـرد ع ميديـا⦈ لـ اضـافة رد بالكـروب**\n\n"
@@ -42,18 +42,18 @@ ZelzalWF_cmd = (
     "**•• لـ حـذف تـرحيـب الخـاص**\n\n"
     "**⎞𝟏𝟎⎝** `.جلب رحب`\n"
     "**•• لـ جـلب تـرحيـب الخـاص **\n\n"
-    "\n 𓆩 [𝙎𝙊𝙐𝙍𝘾𝞝 𝐑𝐄𝐏](t.me/Repthon) 𓆪"
+    "\n 𓆩 [𝙎𝙊𝙐𝙍𝘾𝞝 𝗥𝗲𝗽𝘁𝗵𝗼𝗻](t.me/Repthon) 𓆪"
 )
 
 
 # Copyright (C) 2022 Zed-Thon . All Rights Reserved
 @zedub.zed_cmd(pattern="الردود")
-async def cmd(zelzallll):
-    await edit_or_reply(zelzallll, ZelzalWF_cmd)
+async def cmd(baqir):
+    await edit_or_reply(baqir, BaqirWF_cmd)
 
 @zedub.zed_cmd(pattern="الترحيب")
-async def cmd(zelzallll):
-    await edit_or_reply(zelzallll, ZelzalWF_cmd)
+async def cmd(baqir):
+    await edit_or_reply(baqir, BaqirWF_cmd)
 
 
 @zedub.zed_cmd(incoming=True)
