@@ -33,7 +33,7 @@ from ..helpers.utils import reply_id
 
 #Code by T.me/zzzzl1l
 @zedub.zed_cmd(pattern=f"تيك(?: |$)(.*)")
-async def zelzal_tiktok(event):
+async def baqir_tiktok(event):
     LAN = event.pattern_match.group(1)
     if LAN: #Write Code By T.me/zzzzl1l
         ROGER = LAN
@@ -47,7 +47,7 @@ async def zelzal_tiktok(event):
         try:
             await conv.send_message("/start")
             await conv.get_response()
-            await conv.send_message(zelzal) #Code by T.me/zzzzl1l
+            await conv.send_message(ROGER) #Code by T.me/zzzzl1l
             repthon = await conv.get_response()
             await rep.delete()
             await borg.send_file(
@@ -60,7 +60,7 @@ async def zelzal_tiktok(event):
             await zedub(unblock("downloader_tiktok_bot"))
             await conv.send_message("/start")
             await conv.get_response()
-            await conv.send_message(zelzal)
+            await conv.send_message(ROGER)
             repthon = await conv.get_response()
             await rep.delete()
             await borg.send_file(
