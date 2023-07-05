@@ -14,9 +14,7 @@ plugin_category = "الترفيه"
 
 
 
-@zedub.zed_cmd(
-    pattern="بصمات ميمز$",
-    command=("بصمات ميمز", plugin_category),
+@zedub.on(admin_cmd(outgoing=True, pattern="بصمات ميمز$"))
 )
 async def _(event):
      if not event.text[0].isalpha() and event.text[0] not in ("/", "#", "@", "!"):
@@ -25,9 +23,7 @@ async def _(event):
 
 )
 
-@zedub.zed_cmd(
-    pattern="بصمات ميمز2$",
-    command=("بصمات ميمز2", plugin_category),
+@zedub.on(admin_cmd(outgoing=True, pattern="بصمات ميمز2$"))
 )
 async def _(event):
      if not event.text[0].isalpha() and event.text[0] not in ("/", "#", "@", "!"):
@@ -36,9 +32,7 @@ async def _(event):
 
 )
 
-@zedub.zed_cmd(
-    pattern="بصمات ميمز3$",
-    command=("بصمات ميمز3", plugin_category),
+@zedub.on(admin_cmd(outgoing=True, pattern="بصمات ميمز3$"))
 )
 async def _(event):
      if not event.text[0].isalpha() and event.text[0] not in ("/", "#", "@", "!"):
@@ -47,9 +41,7 @@ async def _(event):
 
 )
 
-@zedub.zed_cmd(
-    pattern="بصمات ميمز4$",
-    command=("بصمات ميمز4", plugin_category),
+@zedub.on(admin_cmd(outgoing=True, pattern="بصمات ميمز4$"))
 )
 async def _(event):
      if not event.text[0].isalpha() and event.text[0] not in ("/", "#", "@", "!"):
@@ -58,9 +50,7 @@ async def _(event):
 
 )
 	
-@zedub.zed_cmd(
-    pattern="بصمات ميمز5$",
-    command=("بصمات ميمز5", plugin_category),
+@zedub.on(admin_cmd(outgoing=True, pattern="بصمات ميمز5$"))
 )
 async def _(event):
     if not event.text[0].isalpha() and event.text[0] not in ("/", "#", "@", "!"):
@@ -68,9 +58,7 @@ async def _(event):
         " قائمة اوامر بصمات الميمز\n★⋆┄─┄─┄─┄┄─┄─┄─┄─┄┄⋆\n⎉╎ اختر احدى هذه الاوامر\n\n- ( `.امشي كحبة` )\n- ( `.امداك` )\n- ( `.الحس` )\n- ( `.افتهمنا` )\n- ( `.اطلع برا` )\n- ( `.اخت التنيج` )\n- ( `.اوني تشان` )\n- ( `.اوني تشان2` )\n- ( `.بجيت` )\n- ( `.نشاقة` )\n- ( `.لاتغلط` )\n- ( `.احب الله` )\n- ( `.روح` )\n- ( `.خبز يابس` )\n- ( `.خيار بصل` )\n- ( `.ماي ارو` )\n\n★\n⎉╎CH : @Repthon"
 
 )
-@zedub.zedub_cmd(
-    pattern="بصمات انمي$",
-    command=("بصمات انمي", plugin_category),
+@zedub.on(admin_cmd(outgoing=True, pattern="بصمات انمي$"))
 )
 async def _(event):
      if not event.text[0].isalpha() and event.text[0] not in ("/", "#", "@", "!"):
