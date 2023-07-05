@@ -11,6 +11,7 @@ from ..Config import Config
 from ..core.managers import edit_or_reply, edit_delete
 from ..helpers import reply_id, get_user_from_event
 from . import BOTLOG, BOTLOG_CHATID
+from zthon.core import admin_cmd
 plugin_category = "الادوات"
 LOGS = logging.getLogger(__name__)
 
@@ -766,9 +767,8 @@ async def zed(mention):
     my_first = me.first_name
     my_mention = f"[{me.first_name}](tg://user?id={me.id})"
     await edit_or_reply(mention, f"**🚺 ╎ المستخـدم ه ⪼ • ** [{zedth2}](tg://user?id={user.id}) \n☑️ **╎ تم رفعـهـا خطيبتك .. بنجـاح 💍👰🏼‍♀️.** \n**🤵‍♂️ ╎ بواسطـه  :** {my_mention} ")
-@zedub.zed_cmd(pattern="مصه(?:\s|$)([\s\S]*)")
+@zedub.on(admin_cmd(outgoing=True, pattern="مصه$"))
 async def permalink(mention):
-    """Generates a link to the user's PM with a custom text."""
     user, custom = await get_user_from_event(mention)
     if not user:
         return
