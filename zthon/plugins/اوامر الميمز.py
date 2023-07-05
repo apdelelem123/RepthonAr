@@ -10,7 +10,7 @@ from zthon import zedub
 from ..core.managers import edit_or_reply
 from . import zedub
 
-
+plugin_category = "التسليه"
 
 @zedub.zed_cmd(
     pattern="بصمات ميمز$",
