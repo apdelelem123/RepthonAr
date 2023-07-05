@@ -1,65 +1,71 @@
 # Repthon🔥
+# Repthon - Baqir
+# Copyright (C) 2023 RepthonArabic . All Rights Reserved
+#
+# This file is a part of < https://github.com/RepthonArabic/RepthonAr/ >
+# PLease read the GNU Affero General Public License in
+# <https://www.github.com/RepthonArabic/RepthonAr/blob/master/LICENSE/>.
+
+
+import requests
 import asyncio
 import os
-
+import sys
+import urllib.request
+from datetime import timedelta
 from telethon import events
+from telethon.errors import FloodWaitError
+from telethon.tl.functions.messages import GetHistoryRequest, ImportChatInviteRequest
+from telethon.tl.functions.channels import JoinChannelRequest
+from telethon.tl.functions.messages import ImportChatInviteRequest
 from telethon.errors.rpcerrorlist import YouBlockedUserError
+from telethon.tl.functions.contacts import UnblockRequest as unblock
+from telethon.tl.functions.messages import ImportChatInviteRequest as Get
 
-from zthon import zedub
 
+from . import zedub
 from ..core.managers import edit_delete, edit_or_reply
+from ..helpers import media_type
 from ..helpers.utils import reply_id
-from . import BOTLOG, BOTLOG_CHATID
-from telethon import events
-from telethon.errors.rpcerrorlist import YouBlockedUserError
-
-plugin_category = "البحث"
 
 
-@zedub.zed_cmd(
-    pattern="تيك توك(?:\s|$)([\s\S]*)",
-    command=("تيك توك", plugin_category),
-    info={
-        "header": "لـ تحميل الفيـديـو من تيـك تـوك عبـر الرابـط",
-        "الاستـخـدام": "{tr}تيكتوك بالـرد ع رابـط",
-    },
-)
-async def _(event):
-    if event.fwd_from:
-        return
-    reply_message = await event.get_reply_message()
-    if not reply_message:
-        await edit_or_reply(event, "**```بالـرد على الرابـط حمبـي 🧸🎈```**")
-        return
-    if not reply_message.text:
-        await edit_or_reply(event, "**```بالـرد على الرابـط حمبـي 🧸🎈```**")
-        return
-    chat = "@downloader_tiktok_bot"
-    catevent = await edit_or_reply(event, "**╮ ❐ جـارِ التحميـل من تيـك تـوك انتظـر قليلاً  ▬▭... 𓅫╰**")
-    async with event.client.conversation(chat) as conv:
+
+
+#Code by T.me/zzzzl1l
+@zedub.zed_cmd(pattern=f"تيك(?: |$)(.*)")
+async def zelzal_tiktok(event):
+    LAN = event.pattern_match.group(1)
+    if LAN: #Write Code By T.me/zzzzl1l
+        ROGER = LAN
+    elif event.is_reply:
+        ROGER = await event.get_reply_message()
+    else:
+        return await edit_or_reply(event, "**⎉╎بالـࢪد ؏ــلى رابـط تيـك تـوك**")
+    chat = "@downloader_tiktok_bot" #Code by T.me/zzzzl1l
+    rep = await edit_or_reply(event, "**⎉╎جـارِ التحميـل من تيـك تـوك ...**")
+    async with borg.conversation(chat) as conv: #Code by T.me/zzzzl1l
         try:
-            response = conv.wait_event(
-                events.NewMessage(incoming=True, from_users=1332941342)
+            await conv.send_message("/start")
+            await conv.get_response()
+            await conv.send_message(zelzal) #Code by T.me/zzzzl1l
+            repthon = await conv.get_response()
+            await rep.delete()
+            await borg.send_file(
+                event.chat_id,
+                repthon,
+                caption=f"<b>⎉╎تم تحميل الفيديـو .. بنجاح 🎬</b>",
+                parse_mode="html",
             )
-            await event.client.forward_messages(chat, reply_message)
-            response = await response
-            await event.client.send_read_acknowledge(conv.chat_id)
-        except YouBlockedUserError:
-            await catevent.edit(
-                "**❈╎تحـقق من انـك لم تقـم بحظـر البوت @downloader_tiktok_bot .. ثم اعـد استخدام الامـر ...🤖♥️**"
+        except YouBlockedUserError: #Code by T.me/zzzzl1l
+            await zedub(unblock("downloader_tiktok_bot"))
+            await conv.send_message("/start")
+            await conv.get_response()
+            await conv.send_message(zelzal)
+            repthon = await conv.get_response()
+            await rep.delete()
+            await borg.send_file(
+                event.chat_id,
+                repthon,
+                caption=f"<b>⎉╎تم تحميل الفيديـو .. بنجاح 🎬</b>",
+                parse_mode="html",
             )
-            return
-        if response.text.startswith(""):
-            await catevent.edit("**🤨💔...؟**")
-        else:
-            await catevent.delete()
-            await event.client.send_message(event.chat_id, response.message)
-
-
-CMD_HELP.update(
-    {
-        "تيك توك": "**اسم الاضافـه : **`تيك توك`\
-    \n\n**╮•❐ الامـر ⦂ **`.تيك توك` بالرد على الرابط\
-    \n**الشـرح •• **تحميل مقاطـع الفيديـو من تيـك تـوك"
-    }
-)
