@@ -15,7 +15,6 @@ plugin_category = "الترفيه"
 
 
 @zedub.on(admin_cmd(outgoing=True, pattern="بصمات ميمز$"))
-)
 async def _(event):
      if not event.text[0].isalpha() and event.text[0] not in ("/", "#", "@", "!"):
         await event.edit(
@@ -24,7 +23,6 @@ async def _(event):
 )
 
 @zedub.on(admin_cmd(outgoing=True, pattern="بصمات ميمز2$"))
-)
 async def _(event):
      if not event.text[0].isalpha() and event.text[0] not in ("/", "#", "@", "!"):
         await event.edit(
@@ -33,7 +31,6 @@ async def _(event):
 )
 
 @zedub.on(admin_cmd(outgoing=True, pattern="بصمات ميمز3$"))
-)
 async def _(event):
      if not event.text[0].isalpha() and event.text[0] not in ("/", "#", "@", "!"):
         await event.edit(
@@ -42,7 +39,6 @@ async def _(event):
 )
 
 @zedub.on(admin_cmd(outgoing=True, pattern="بصمات ميمز4$"))
-)
 async def _(event):
      if not event.text[0].isalpha() and event.text[0] not in ("/", "#", "@", "!"):
         await event.edit(
@@ -51,7 +47,6 @@ async def _(event):
 )
 	
 @zedub.on(admin_cmd(outgoing=True, pattern="بصمات ميمز5$"))
-)
 async def _(event):
     if not event.text[0].isalpha() and event.text[0] not in ("/", "#", "@", "!"):
         await event.edit(
@@ -59,7 +54,6 @@ async def _(event):
 
 )
 @zedub.on(admin_cmd(outgoing=True, pattern="بصمات انمي$"))
-)
 async def _(event):
      if not event.text[0].isalpha() and event.text[0] not in ("/", "#", "@", "!"):
         await event.edit(
