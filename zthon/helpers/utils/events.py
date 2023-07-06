@@ -9,7 +9,14 @@ from ...core.managers import edit_delete
 
 LOGS = logging.getLogger(__name__)
 
-
+async def reply_id(event):
+    reply_to_id = None
+    if event.sender_id in Config.SUDO_USERS:
+        reply_to_id = event.id
+    if event.reply_to_msg_id:
+        reply_to_id = event.reply_to_msg_id
+    return reply_to_id
+    
 async def get_user_from_event(
     event, zedevent=None, secondgroup=None, nogroup=False, noedits=False
 ):  # sourcery no-metrics
