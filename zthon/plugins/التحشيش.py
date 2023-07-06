@@ -779,8 +779,11 @@ async def zed(mention):
     my_first = me.first_name
     my_mention = f"[{me.first_name}](tg://user?id={me.id})"
     await edit_or_reply(mention, f"**🚺 ╎ المستخـدم ه ⪼ • ** [{zedth2}](tg://user?id={user.id}) \n☑️ **╎ تم رفعـهـا خطيبتك .. بنجـاح 💍👰🏼‍♀️.** \n**🤵‍♂️ ╎ بواسطـه  :** {my_mention} ")
-@zedub.zed_cmd(pattern="مصه")
-async def zed(mention):
+@zedub.zedub_cmd(
+    pattern="مصه(?:\s|$)([\s\S]*)",
+    command=("مصه", plugin_category),
+)
+async def zed(mention): 
     user, custom = await get_user_from_event(mention)
     if not user:
         return
