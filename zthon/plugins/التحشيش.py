@@ -781,7 +781,6 @@ async def zed(mention):
     await edit_or_reply(mention, f"**🚺 ╎ المستخـدم ه ⪼ • ** [{zedth2}](tg://user?id={user.id}) \n☑️ **╎ تم رفعـهـا خطيبتك .. بنجـاح 💍👰🏼‍♀️.** \n**🤵‍♂️ ╎ بواسطـه  :** {my_mention} ")
 @zedub.zed_cmd(pattern="مصه")
 async def zed(mention):
-    """Generates a link to the user's PM with a custom text."""
     user, custom = await get_user_from_event(mention)
     if not user:
         return
