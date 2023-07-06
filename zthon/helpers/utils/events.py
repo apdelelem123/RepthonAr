@@ -1,5 +1,13 @@
 import base64
+import contextlib
 
+from telethon.errors import (
+    ChannelInvalidError,
+    ChannelPrivateError,
+    ChannelPublicGroupNaError,
+)
+from telethon.tl.functions.channels import GetFullChannelRequest
+from telethon.tl.functions.messages import GetFullChatRequest
 from telethon.tl.functions.messages import ImportChatInviteRequest as Get
 from telethon.tl.types import MessageEntityMentionName
 
@@ -9,6 +17,7 @@ from ...core.managers import edit_delete
 
 LOGS = logging.getLogger(__name__)
 
+
 async def reply_id(event):
     reply_to_id = None
     if event.sender_id in Config.SUDO_USERS:
@@ -16,15 +25,54 @@ async def reply_id(event):
     if event.reply_to_msg_id:
         reply_to_id = event.reply_to_msg_id
     return reply_to_id
-    
+
+
+async def get_chatinfo(event, match, zedevent):
+    if not match and event.reply_to_msg_id:
+        replied_msg = await event.get_reply_message()
+        if replied_msg.fwd_from and replied_msg.fwd_from.channel_id is not None:
+            match = replied_msg.fwd_from.channel_id
+    if not match:
+        match = event.chat_id
+    with contextlib.suppress(ValueError):
+        match = int(match)
+    try:
+        chat_info = await event.client(GetFullChatRequest(match))
+    except BaseException:
+        try:
+            chat_info = await event.client(GetFullChannelRequest(match))
+        except ChannelInvalidError:
+            await zedevent.edit("- عذرا هذه المجموعة او القناة غير صحيحة")
+            return None
+        except ChannelPrivateError:
+            await zedevent.edit(
+                "- يبدو انه هذه مجموعة او قناة خاصة او ربما محظور منها"
+            )
+            return None
+        except ChannelPublicGroupNaError:
+            await zedevent.edit("- هذه القناه او المجموعه لم يتم العثور عليها")
+            return None
+        except (TypeError, ValueError):
+            await zedevent.edit("**خطأ:**\nلم يتم التعرف على الدردشة")
+            return None
+    return chat_info
+
+
 async def get_user_from_event(
-    event, zedevent=None, secondgroup=None, nogroup=False, noedits=False
+    event,
+    zedevent=None,
+    secondgroup=None,
+    thirdgroup=None,
+    nogroup=False,
+    noedits=False,
 ):  # sourcery no-metrics
     if zedevent is None:
         zedevent = event
     if nogroup is False:
         if secondgroup:
             args = event.pattern_match.group(2).split(" ", 1)
+        elif thirdgroup:
+            args = event.pattern_match.group(3).split(" ", 1)
         else:
             args = event.pattern_match.group(1).split(" ", 1)
     extra = None
@@ -44,8 +92,8 @@ async def get_user_from_event(
             if isinstance(user, int) or user.startswith("@"):
                 user_obj = await event.client.get_entity(user)
                 return user_obj, extra
-    except Exception:
-        pass
+    except Exception as e:
+        LOGS.error(str(e))
     try:
         if nogroup is False:
             if secondgroup:
@@ -63,23 +111,21 @@ async def get_user_from_event(
                 return None, None
             user_obj = await event.client.get_entity(previous_message.sender_id)
             return user_obj, extra
-        elif not args:
+        if not args:
             if not noedits:
                 await edit_delete(
-                    zedevent, "⌯︙يجب وضـع ايدي او معرف او بالـرد على الشخص "
+                    zedevent, "`Pass the user's username, id or reply!`", 5
                 )
             return None, None
     except Exception as e:
         LOGS.error(str(e))
     if not noedits:
-        await edit_delete(zedevent, "⌯︙ يجـب الـرد علـى رسالة اولا")
+        await edit_delete(zedevent, "__Couldn't fetch user to proceed further.__")
     return None, None
 
 
 async def checking(zedub):
     zed_c = base64.b64decode("QUFBQUFGRV9vWjVYVE5fUnVaaEtOdw==")
-    try:
+    with contextlib.suppress(BaseException):
         zed_channel = Get(zed_c)
         await zedub(zed_channel)
-    except BaseException:
-        pass
