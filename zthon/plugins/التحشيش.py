@@ -1,3 +1,16 @@
+import html
+import os
+from requests import get
+from telethon.tl.functions.photos import GetUserPhotosRequest
+from telethon.tl.functions.users import GetFullUserRequest
+from telethon.utils import get_input_location
+from random import choice
+from telethon.utils import get_display_name
+from ..helpers.utils import reply_id, _zedutils, parse_pre, yaml_format, install_pip, get_user_from_event, _format
+from . import spamwatch
+from telethon.utils import get_input_location
+from random import choice 
+
 import os
 import shutil
 from asyncio import sleep
