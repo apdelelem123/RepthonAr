@@ -149,7 +149,6 @@ async def _(event):
     link_preview=False)
 
 
-
 @zedub.tgbot.on(CallbackQuery(data=re.compile(rb"zzmusic")))
 @check_owner
 async def _(event):
