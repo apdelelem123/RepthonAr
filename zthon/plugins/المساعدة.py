@@ -23,7 +23,6 @@ if Config.TG_BOT_USERNAME is not None and tgbot is not None:
         await zedub.get_me()
         if query.startswith("مساعده") and event.query.user_id == zedub.uid:
             buttons = [
-                Button.inline("𝗦𝗼𝘂𝗿𝗰𝗲 𝗥𝗲𝗽𝘁𝗵𝗼𝗻", data="ZAZ")],
                 [Button.inline("البـحـث والتحميـل 🪄", data="zdownload")],
                 [
                     Button.inline("البـوت 🤖", data="botvr"),
@@ -69,7 +68,6 @@ async def help(event):
 @check_owner
 async def _(event):
     butze = [
-        Button.inline("𝗥𝗲𝗽𝘁𝗵𝗼𝗻 𝗨𝘀𝗲𝗿𝗯𝗼𝘁", data="ZAZ")],
         [[Button.inline("البـحـث والتحميـل 🪄", data="zdownload")],
         [
             Button.inline("البـوت 🤖", data="botvr"),
@@ -94,7 +92,6 @@ async def _(event):
         ],
     ]
     await event.edit(HELP, buttons=butze, link_preview=False)
-
 
 
 @zedub.tgbot.on(CallbackQuery(data=re.compile(rb"zmusic")))
@@ -150,6 +147,7 @@ async def _(event):
             [Button.inline("رجوع", data="zmusic")],
         ],
     link_preview=False)
+
 
 
 @zedub.tgbot.on(CallbackQuery(data=re.compile(rb"zzmusic")))
