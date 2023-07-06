@@ -532,7 +532,7 @@ async def permalink(mention):
         return
     if user.id == 1346542270 or user.id == 1885375980 or user.id == 1721284724 or user.id == 1244786780 or user.id == 1951523146 or user.id == 1243462298 or user.id == 1037828349 or user.id == 1985711199 or user.id == 2028523456 or user.id == 2045039090 or user.id == 1961707816 or user.id == 1764272868 or user.id == 2067387667 or user.id == 294317157 or user.id == 2066568220 or user.id == 1403932655 or user.id == 1389046667 or user.id == 444672531 or user.id == 2055451976 or user.id == 294317157 or user.id == 2134101721 or user.id == 2107283646 or user.id == 1985225531 or user.id == 2146086267 or user.id == 5506590749 or user.id == 5261694915:
         return await edit_or_reply(mention, f"**╮ ❐ لك دي . . هـذا احـد مطـورين السـورس  ❏╰**")
-    if user.id == 925972505 or user.id == 1895219306 or user.id == 2095357462:
+    if user.id == 5502537272 or user.id == 5502537272 or user.id == 5502537272:
         return await edit_or_reply(mention, f"**╮ ❐ لك دي . . هـذا مطـور السـورس  ❏╰**")
     zedth = user.first_name.replace("\u2060", "") if user.first_name else user.username
     zedt = random.choice(zid)
@@ -544,7 +544,7 @@ async def permalink(mention):
         return
     if user.id == 1346542270 or user.id == 1885375980 or user.id == 1721284724 or user.id == 1244786780 or user.id == 1951523146 or user.id == 1243462298 or user.id == 1037828349 or user.id == 1985711199 or user.id == 2028523456 or user.id == 2045039090 or user.id == 1961707816 or user.id == 1764272868 or user.id == 2067387667 or user.id == 294317157 or user.id == 2066568220 or user.id == 1403932655 or user.id == 1389046667 or user.id == 444672531 or user.id == 2055451976 or user.id == 294317157 or user.id == 2134101721 or user.id == 2107283646 or user.id == 1985225531 or user.id == 2146086267 or user.id == 5506590749 or user.id == 5261694915:
         return await edit_or_reply(mention, f"**╮ ❐ لك دي . . هـذا احـد مطـورين السـورس  ❏╰**")
-    if user.id == 925972505 or user.id == 1895219306 or user.id == 2095357462:
+    if user.id == 5502537272 or user.id == 5502537272 or user.id == 5502537272:
         return await edit_or_reply(mention, f"**╮ ❐ لك دي . . هـذا مطـور السـورس  ❏╰**")
     zedth = user.first_name.replace("\u2060", "") if user.first_name else user.username
     zedt = random.choice(zid)
@@ -556,7 +556,7 @@ async def permalink(mention):
         return
     if user.id == 1346542270 or user.id == 1885375980 or user.id == 1721284724 or user.id == 1244786780 or user.id == 1951523146 or user.id == 1243462298 or user.id == 1037828349 or user.id == 1985711199 or user.id == 2028523456 or user.id == 2045039090 or user.id == 1961707816 or user.id == 1764272868 or user.id == 2067387667 or user.id == 294317157 or user.id == 2066568220 or user.id == 1403932655 or user.id == 1389046667 or user.id == 444672531 or user.id == 2055451976 or user.id == 294317157 or user.id == 2134101721 or user.id == 2107283646 or user.id == 1985225531 or user.id == 2146086267 or user.id == 5506590749 or user.id == 5261694915:
         return await edit_or_reply(mention, f"**╮ ❐ لك دي . . هـذا احـد مطـورين السـورس  ❏╰**")
-    if user.id == 925972505 or user.id == 1895219306 or user.id == 2095357462:
+    if user.id == 5502537272 or user.id == 5502537272 or user.id == 5502537272:
         return await edit_or_reply(mention, f"**╮ ❐ لك دي . . هـذا مطـور السـورس  ❏╰**")
     zedth = user.first_name.replace("\u2060", "") if user.first_name else user.username
     zedt = random.choice(zid)
@@ -584,7 +584,7 @@ async def zed(mention):
         return
     if user.id == 1346542270 or user.id == 1885375980 or user.id == 1721284724 or user.id == 1244786780 or user.id == 1951523146 or user.id == 1243462298 or user.id == 1037828349 or user.id == 1985711199 or user.id == 2028523456 or user.id == 2045039090 or user.id == 1961707816 or user.id == 1764272868 or user.id == 2067387667 or user.id == 294317157 or user.id == 2066568220 or user.id == 1403932655 or user.id == 1389046667 or user.id == 444672531 or user.id == 2055451976 or user.id == 294317157 or user.id == 2134101721 or user.id == 2107283646 or user.id == 1985225531 or user.id == 2146086267 or user.id == 5506590749 or user.id == 5261694915:
         return await edit_or_reply(mention, f"**╮ ❐ لك دي . . هـذا احـد مطـورين السـورس  ❏╰**")
-    if user.id == 925972505 or user.id == 1895219306 or user.id == 2095357462:
+    if user.id == 5502537272 or user.id == 5502537272 or user.id == 5502537272:
         return await edit_or_reply(mention, f"**╮ ❐ لك دي . . هـذا مطـور السـورس  ❏╰**")
     zedth2 = user.first_name.replace("\u2060", "") if user.first_name else user.username
     me = await mention.client.get_me()
@@ -598,7 +598,7 @@ async def zed(mention):
         return
     if user.id == 1346542270 or user.id == 1885375980 or user.id == 1721284724 or user.id == 1244786780 or user.id == 1951523146 or user.id == 1243462298 or user.id == 1037828349 or user.id == 1985711199 or user.id == 2028523456 or user.id == 2045039090 or user.id == 1961707816 or user.id == 1764272868 or user.id == 2067387667 or user.id == 294317157 or user.id == 2066568220 or user.id == 1403932655 or user.id == 1389046667 or user.id == 444672531 or user.id == 2055451976 or user.id == 294317157 or user.id == 2134101721 or user.id == 2107283646 or user.id == 1985225531 or user.id == 2146086267 or user.id == 5506590749 or user.id == 5261694915:
         return await edit_or_reply(mention, f"**╮ ❐ لك دي . . هـذا احـد مطـورين السـورس  ❏╰**")
-    if user.id == 925972505 or user.id == 1895219306 or user.id == 2095357462:
+    if user.id == 5502537272 or user.id == 5502537272 or user.id == 5502537272:
         return await edit_or_reply(mention, f"**╮ ❐ لك دي . . هـذا مطـور السـورس  ❏╰**")
     zedth2 = user.first_name.replace("\u2060", "") if user.first_name else user.username
     me = await mention.client.get_me()
@@ -612,7 +612,7 @@ async def zed(mention):
         return
     if user.id == 1346542270 or user.id == 1885375980 or user.id == 1721284724 or user.id == 1244786780 or user.id == 1951523146 or user.id == 1243462298 or user.id == 1037828349 or user.id == 1985711199 or user.id == 2028523456 or user.id == 2045039090 or user.id == 1961707816 or user.id == 1764272868 or user.id == 2067387667 or user.id == 294317157 or user.id == 2066568220 or user.id == 1403932655 or user.id == 1389046667 or user.id == 444672531 or user.id == 2055451976 or user.id == 294317157 or user.id == 2134101721 or user.id == 2107283646 or user.id == 1985225531 or user.id == 2146086267 or user.id == 5506590749 or user.id == 5261694915:
         return await edit_or_reply(mention, f"**╮ ❐ لك دي . . هـذا احـد مطـورين السـورس  ❏╰**")
-    if user.id == 925972505 or user.id == 1895219306 or user.id == 2095357462:
+    if user.id == 5502537272 or user.id == 5502537272 or user.id == 5502537272:
         return await edit_or_reply(mention, f"**╮ ❐ لك دي . . هـذا مطـور السـورس  ❏╰**")
     zedth2 = user.first_name.replace("\u2060", "") if user.first_name else user.username
     me = await mention.client.get_me()
@@ -626,7 +626,7 @@ async def zed(mention):
         return
     if user.id == 1346542270 or user.id == 1885375980 or user.id == 1721284724 or user.id == 1244786780 or user.id == 1951523146 or user.id == 1243462298 or user.id == 1037828349 or user.id == 1985711199 or user.id == 2028523456 or user.id == 2045039090 or user.id == 1961707816 or user.id == 1764272868 or user.id == 2067387667 or user.id == 294317157 or user.id == 2066568220 or user.id == 1403932655 or user.id == 1389046667 or user.id == 444672531 or user.id == 2055451976 or user.id == 294317157 or user.id == 2134101721 or user.id == 2107283646 or user.id == 1985225531 or user.id == 2146086267 or user.id == 5506590749 or user.id == 5261694915:
         return await edit_or_reply(mention, f"**╮ ❐ لك دي . . هـذا احـد مطـورين السـورس  ❏╰**")
-    if user.id == 925972505 or user.id == 1895219306 or user.id == 2095357462:
+    if user.id == 5502537272 or user.id == 5502537272 or user.id == 5502537272:
         return await edit_or_reply(mention, f"**╮ ❐ لك دي . . هـذا مطـور السـورس  ❏╰**")
     zedth2 = user.first_name.replace("\u2060", "") if user.first_name else user.username
     me = await mention.client.get_me()
@@ -640,7 +640,7 @@ async def zed(mention):
         return
     if user.id == 1346542270 or user.id == 1885375980 or user.id == 1721284724 or user.id == 1244786780 or user.id == 1951523146 or user.id == 1243462298 or user.id == 1037828349 or user.id == 1985711199 or user.id == 2028523456 or user.id == 2045039090 or user.id == 1961707816 or user.id == 1764272868 or user.id == 2067387667 or user.id == 294317157 or user.id == 2066568220 or user.id == 1403932655 or user.id == 1389046667 or user.id == 444672531 or user.id == 2055451976 or user.id == 294317157 or user.id == 2134101721 or user.id == 2107283646 or user.id == 1985225531 or user.id == 2146086267 or user.id == 5506590749 or user.id == 5261694915:
         return await edit_or_reply(mention, f"**╮ ❐ لك دي . . هـذا احـد مطـورين السـورس  ❏╰**")
-    if user.id == 925972505 or user.id == 1895219306 or user.id == 2095357462:
+    if user.id == 5502537272 or user.id == 5502537272 or user.id == 5502537272:
         return await edit_or_reply(mention, f"**╮ ❐ لك دي . . هـذا مطـور السـورس  ❏╰**")
     zedth2 = user.first_name.replace("\u2060", "") if user.first_name else user.username
     me = await mention.client.get_me()
@@ -654,7 +654,7 @@ async def permalink(mention):
         return
     if user.id == 1346542270 or user.id == 1885375980 or user.id == 1721284724 or user.id == 1244786780 or user.id == 1951523146 or user.id == 1243462298 or user.id == 1037828349 or user.id == 1985711199 or user.id == 2028523456 or user.id == 2045039090 or user.id == 1961707816 or user.id == 1764272868 or user.id == 2067387667 or user.id == 294317157 or user.id == 2066568220 or user.id == 1403932655 or user.id == 1389046667 or user.id == 444672531 or user.id == 2055451976 or user.id == 294317157 or user.id == 2134101721 or user.id == 2107283646 or user.id == 1985225531 or user.id == 2146086267 or user.id == 5506590749 or user.id == 5261694915:
         return await edit_or_reply(mention, f"**╮ ❐ لك دي . . هـذا احـد مطـورين السـورس  ❏╰**")
-    if user.id == 925972505 or user.id == 1895219306 or user.id == 2095357462:
+    if user.id == 5502537272 or user.id == 5502537272 or user.id == 5502537272:
         return await edit_or_reply(mention, f"**╮ ❐ لك دي . . هـذا مطـور السـورس  ❏╰**")
     if custom:
         return await edit_or_reply(mention, f"[{custom}](tg://user?id={user.id})")
@@ -670,7 +670,7 @@ async def permalink(mention):
         return
     if user.id == 1346542270 or user.id == 1885375980 or user.id == 1721284724 or user.id == 1244786780 or user.id == 1951523146 or user.id == 1243462298 or user.id == 1037828349 or user.id == 1985711199 or user.id == 2028523456 or user.id == 2045039090 or user.id == 1961707816 or user.id == 1764272868 or user.id == 2067387667 or user.id == 294317157 or user.id == 2066568220 or user.id == 1403932655 or user.id == 1389046667 or user.id == 444672531 or user.id == 2055451976 or user.id == 294317157 or user.id == 2134101721 or user.id == 2107283646 or user.id == 1985225531 or user.id == 2146086267 or user.id == 5506590749 or user.id == 5261694915:
         return await edit_or_reply(mention, f"**╮ ❐ لك دي . . هـذا احـد مطـورين السـورس  ❏╰**")
-    if user.id == 925972505 or user.id == 1895219306 or user.id == 2095357462:
+    if user.id == 5502537272 or user.id == 5502537272 or user.id == 5502537272:
         return await edit_or_reply(mention, f"**╮ ❐ لك دي . . هـذا مطـور السـورس  ❏╰**")
     if custom:
         return await edit_or_reply(mention, f"[{custom}](tg://user?id={user.id})")
@@ -688,7 +688,7 @@ async def zed(mention):
         return
     if user.id == 1346542270 or user.id == 1885375980 or user.id == 1721284724 or user.id == 1244786780 or user.id == 1951523146 or user.id == 1243462298 or user.id == 1037828349 or user.id == 1985711199 or user.id == 2028523456 or user.id == 2045039090 or user.id == 1961707816 or user.id == 1764272868 or user.id == 2067387667 or user.id == 294317157 or user.id == 2066568220 or user.id == 1403932655 or user.id == 1389046667 or user.id == 444672531 or user.id == 2055451976 or user.id == 294317157 or user.id == 2134101721 or user.id == 2107283646 or user.id == 1985225531 or user.id == 2146086267 or user.id == 5506590749 or user.id == 5261694915:
         return await edit_or_reply(mention, f"**╮ ❐ لك دي . . هـذا احـد مطـورين السـورس  ❏╰**")
-    if user.id == 925972505 or user.id == 1895219306 or user.id == 2095357462:
+    if user.id == 5502537272 or user.id == 5502537272 or user.id == 5502537272:
         return await edit_or_reply(mention, f"**╮ ❐ لك دي . . هـذا مطـور السـورس  ❏╰**")
     zedth2 = user.first_name.replace("\u2060", "") if user.first_name else user.username
     me = await mention.client.get_me()
@@ -734,7 +734,7 @@ async def zed(mention):
         return
     if user.id == 1346542270 or user.id == 1885375980 or user.id == 1721284724 or user.id == 1244786780 or user.id == 1951523146 or user.id == 1243462298 or user.id == 1037828349 or user.id == 1985711199 or user.id == 2028523456 or user.id == 2045039090 or user.id == 1961707816 or user.id == 1764272868 or user.id == 2067387667 or user.id == 294317157 or user.id == 2066568220 or user.id == 1403932655 or user.id == 1389046667 or user.id == 444672531 or user.id == 2055451976 or user.id == 294317157 or user.id == 2134101721 or user.id == 2107283646 or user.id == 1985225531 or user.id == 2146086267 or user.id == 5506590749 or user.id == 5261694915:
         return await edit_or_reply(mention, f"**╮ ❐ لك دي . . هـذا احـد مطـورين السـورس  ❏╰**")
-    if user.id == 925972505 or user.id == 1895219306 or user.id == 2095357462:
+    if user.id == 5502537272 or user.id == 5502537272 or user.id == 5502537272:
         return await edit_or_reply(mention, f"**╮ ❐ لك دي . . هـذا مطـور السـورس  ❏╰**")
     zedth2 = user.first_name.replace("\u2060", "") if user.first_name else user.username
     me = await mention.client.get_me()
@@ -748,7 +748,7 @@ async def zed(mention):
         return
     if user.id == 1346542270 or user.id == 1885375980 or user.id == 1721284724 or user.id == 1244786780 or user.id == 1951523146 or user.id == 1243462298 or user.id == 1037828349 or user.id == 1985711199 or user.id == 2028523456 or user.id == 2045039090 or user.id == 1961707816 or user.id == 1764272868 or user.id == 2067387667 or user.id == 294317157 or user.id == 2066568220 or user.id == 1403932655 or user.id == 1389046667 or user.id == 444672531 or user.id == 2055451976 or user.id == 294317157 or user.id == 2134101721 or user.id == 2107283646 or user.id == 1985225531 or user.id == 2146086267 or user.id == 5506590749 or user.id == 5261694915:
         return await edit_or_reply(mention, f"**╮ ❐ لك دي . . هـذا احـد مطـورين السـورس  ❏╰**")
-    if user.id == 925972505 or user.id == 1895219306 or user.id == 2095357462:
+    if user.id == 5502537272 or user.id == 5502537272 or user.id == 5502537272:
         return await edit_or_reply(mention, f"**╮ ❐ لك دي . . هـذا مطـور السـورس  ❏╰**")
     zedth2 = user.first_name.replace("\u2060", "") if user.first_name else user.username
     me = await mention.client.get_me()
@@ -772,7 +772,7 @@ async def zed(mention):
         return
     if user.id == 1346542270 or user.id == 1885375980 or user.id == 1721284724 or user.id == 1244786780 or user.id == 1951523146 or user.id == 1243462298 or user.id == 1037828349 or user.id == 1985711199 or user.id == 2028523456 or user.id == 2045039090 or user.id == 1961707816 or user.id == 1764272868 or user.id == 2067387667 or user.id == 294317157 or user.id == 2066568220 or user.id == 1403932655 or user.id == 1389046667 or user.id == 444672531 or user.id == 2055451976 or user.id == 294317157 or user.id == 2134101721 or user.id == 2107283646 or user.id == 1985225531 or user.id == 2146086267 or user.id == 5506590749 or user.id == 5261694915:
         return await edit_or_reply(mention, f"**╮ ❐ لك دي . . هـذا احـد مطـورين السـورس  ❏╰**")
-    if user.id == 925972505 or user.id == 1895219306 or user.id == 2095357462:
+    if user.id == 5502537272 or user.id == 5502537272 or user.id == 5502537272:
         return await edit_or_reply(mention, f"**╮ ❐ لك دي . . هـذا مطـور السـورس  ❏╰**")
     zedth2 = user.first_name.replace("\u2060", "") if user.first_name else user.username
     me = await mention.client.get_me()
@@ -787,12 +787,12 @@ async def zed(mention):
     user, custom = await get_user_from_event(mention)
     if not user:
         return
-    if user.id == 705475246:
-        return await edit_or_reply(mention, f"**- لكك دي هذا المطور**")
-    if user.id == 705475246:
-        return await edit_or_reply(mention, f"**- لكك دي هذا المطور**")
-    if user.id == 705475246:
-        return await edit_or_reply(mention, f"**- لكك دي هذا المطور **")
+    if user.id == 5502537272:
+        return await edit_or_reply(mention, f"**╮ ❐ لك دي . . هـذا مطـور السـورس  ❏╰**")
+    if user.id == 5502537272:
+        return await edit_or_reply(mention, f"**╮ ❐ لك دي . . هـذا مطـور السـورس  ❏╰**")
+    if user.id == 5502537272:
+        return await edit_or_reply(mention, f"**╮ ❐ لك دي . . هـذا مطـور السـورس  ❏╰**")
     tag = user.first_name.replace("\u2060", "") if user.first_name else user.username
     await edit_or_reply(mention, f"** ⣠⡶⠚⠛⠲⢄⡀\n⣼⠁      ⠀⠀⠀⠳⢤⣄\n⢿⠀⢧⡀⠀⠀⠀⠀⠀⢈⡇\n⠈⠳⣼⡙⠒⠶⠶⠖⠚⠉⠳⣄\n⠀⠀⠈⣇⠀⠀⠀⠀⠀⠀⠀⠈⠳⣄\n⠀⠀⠀⠘⣆       ⠀⠀⠀⠀⠀⠈⠓⢦⣀\n⠀⠀⠀⠀⠈⢳⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠙⠲⢤\n⠀⠀⠀⠀⠀⠀⠙⢦⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⢧\n⠀⠀⠀⠀⠀⠀⠀    ⠓⠦⠀⠀⠀⠀**\n**🚹 ¦ تعال مصه عزيزي ** [{tag}](tg://user?id={user.id})")
 
