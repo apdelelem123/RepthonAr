@@ -66,29 +66,31 @@ async def help(event):
 @zedub.tgbot.on(CallbackQuery(data=re.compile(rb"ZEDHELP")))
 @check_owner
 async def _(event):
-    butze = 
-        [[Button.inline("البـحـث والتحميـل 🪄", data="zdownload")],
+    butze = [
         [
-            Button.inline("البـوت 🤖", data="botvr"),
-            Button.inline("الحساب🎗", data="acccount"),
+            Button.inline("البـحـث والتحميـل 🪄", data="zdownload")
         ],
         [
-            Button.inline("المكالمات & الميـوزك 🎙🎸", data="zmusic"),
+            Button.inline("البـوت 🤖", data="botvr"),
+            Button.inline("الحساب🎗", data="acccount")
+        ],
+        [
+            Button.inline("المكالمات & الميـوزك 🎙🎸", data="zmusic")
         ],
         [
             Button.inline("المجمـوعـة 🛗", data="groupvr"),
-            Button.inline(" الفـارات 🛂", data="varszed"),
+            Button.inline(" الفـارات 🛂", data="varszed")
         ],
         [
-            Button.inline("التسليـه والتحشيش 🎃", data="funzed"),
+            Button.inline("التسليـه والتحشيش 🎃", data="funzed")
         ],
         [
             Button.inline("المرفقـات 🪁", data="extras"),
-            Button.inline("الادوات 💡", data="toolzed"),
+            Button.inline("الادوات 💡", data="toolzed")
         ],
         [
-            Button.inline("الذكـاء الاصطنـاعـي 🛸", data="zchatgpt"),
-        ],
+            Button.inline("الذكـاء الاصطنـاعـي 🛸", data="zchatgpt")
+        ]
     ]
     await event.edit(HELP, buttons=butze, link_preview=False)
 
