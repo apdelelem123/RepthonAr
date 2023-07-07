@@ -66,7 +66,7 @@ async def help(event):
 @zedub.tgbot.on(CallbackQuery(data=re.compile(rb"ZEDHELP")))
 @check_owner
 async def _(event):
-    butze = [
+    butze = 
         [[Button.inline("البـحـث والتحميـل 🪄", data="zdownload")],
         [
             Button.inline("البـوت 🤖", data="botvr"),
