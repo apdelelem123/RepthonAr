@@ -53,6 +53,7 @@ if Config.TG_BOT_USERNAME is not None and tgbot is not None:
             )
         await event.answer([result] if result else None)
 
+
 @zedub.zed_cmd(pattern="مساعده")
 async def help(event):
     if event.reply_to_msg_id:
@@ -60,6 +61,7 @@ async def help(event):
     response = await zedub.inline_query(Config.TG_BOT_USERNAME, "مساعده")
     await response[0].click(event.chat_id)
     await event.delete()
+
 
 @zedub.tgbot.on(CallbackQuery(data=re.compile(rb"ZEDHELP")))
 @check_owner
@@ -89,6 +91,7 @@ async def _(event):
         ],
     ]
     await event.edit(HELP, buttons=butze, link_preview=False)
+
 
 @zedub.tgbot.on(CallbackQuery(data=re.compile(rb"zmusic")))
 @check_owner
