@@ -22,6 +22,7 @@ if Config.TG_BOT_USERNAME is not None and tgbot is not None:
         await zedub.get_me()
         if query.startswith("مساعده") and event.query.user_id == zedub.uid:
             buttons = [
+                [Button.inline("𝗦𝗼𝘂𝗿𝗰𝗲 𝗥𝗲𝗽𝘁𝗵𝗼𝗻", data="ZAZ")],
                 [Button.inline("البـحـث والتحميـل 🪄", data="zdownload")],
                 [
                     Button.inline("البـوت 🤖", data="botvr"),
