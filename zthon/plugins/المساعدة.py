@@ -8,7 +8,6 @@ from . import zedub
 
 from ..Config import Config
 from . import mention
-
 HELP = f"**🧑🏻‍💻┊مـࢪحبـاً عـزيـزي {mention}**\n**🛂┊في قائمـة المسـاعـده والشـروحـات\n🛃┊من هنـا يمكنـك ايجـاد شـرح لكـل اوامـر السـورس**\n\n[ᯓ 𝗥𝗲𝗽𝘁𝗵𝗼𝗻 ♥️](t.me/Repthon)\n\n"
 
 
@@ -54,7 +53,6 @@ if Config.TG_BOT_USERNAME is not None and tgbot is not None:
             )
         await event.answer([result] if result else None)
 
-
 @zedub.zed_cmd(pattern="مساعده")
 async def help(event):
     if event.reply_to_msg_id:
@@ -62,7 +60,6 @@ async def help(event):
     response = await zedub.inline_query(Config.TG_BOT_USERNAME, "مساعده")
     await response[0].click(event.chat_id)
     await event.delete()
-
 
 @zedub.tgbot.on(CallbackQuery(data=re.compile(rb"ZEDHELP")))
 @check_owner
@@ -93,7 +90,6 @@ async def _(event):
     ]
     await event.edit(HELP, buttons=butze, link_preview=False)
 
-
 @zedub.tgbot.on(CallbackQuery(data=re.compile(rb"zmusic")))
 @check_owner
 async def zed_help(event):
@@ -113,7 +109,6 @@ async def zed_help(event):
         link_preview=False)
     except Exception:
         await event.answer(zelzal, cache_time=0, alert=True)
-
 
 @zedub.tgbot.on(CallbackQuery(data=re.compile(rb"zzcall")))
 @check_owner
@@ -148,7 +143,6 @@ async def _(event):
         ],
     link_preview=False)
 
-
 @zedub.tgbot.on(CallbackQuery(data=re.compile(rb"zzmusic")))
 @check_owner
 async def _(event):
@@ -178,7 +172,6 @@ async def _(event):
         ],
     link_preview=False)
 
-
 @zedub.tgbot.on(CallbackQuery(data=re.compile(rb"zchatgpt")))
 @check_owner
 async def _(event):
@@ -203,7 +196,6 @@ async def _(event):
             [Button.inline("رجوع", data="ZEDHELP")],
         ],
     link_preview=False)
-
 
 ############ البوت ############
 @zedub.tgbot.on(CallbackQuery(data=re.compile(rb"botvr")))
