@@ -4,7 +4,7 @@
 # This file is a part of < https://github.com/RepthonArabic/RepthonAr/ >
 # PLease read the GNU Affero General Public License in
 # <https://www.github.com/RepthonArabic/RepthonAr/blob/master/LINCENSE/>.
-#الملـف حقـوق وكتابـة زلـزال الهيبـه ⤶ @zzzzl1l خاص بسـورس ⤶ 𝙕𝙚𝙙𝙏𝙝𝙤𝙣
+#الملـف حقـوق وكتابـة روجــر ⤶ @E_7_V خاص بسـورس ⤶ 𝙍𝙀𝙋𝙏𝙃𝙊𝙉
 #الملـف متعـوب عليه تخمـط اذكر المصـدر
 #تخمـط بـدون مصـدر اهينـك
 
