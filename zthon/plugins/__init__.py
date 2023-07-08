@@ -1,3 +1,4 @@
+# جميع الحقوق - @Repthon
 import math
 import os
 import re
