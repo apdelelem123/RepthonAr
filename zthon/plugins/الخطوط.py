@@ -62,9 +62,15 @@ async def baqir(event):
             await event.edit(f"`{event.message.message}`")
         except MessageIdInvalidError:
             pass
-  isitalic = gvarstatus("italic")
-  if isitalic:
+  
+isitalic = gvarstatus("italic")
+  
+if isitalic:
+    
     try:
-        await event.edit(f"__{event.message.message}__")
-    except MessageIdInvalidError:
+    
+    await event.edit(f"__{event.message.message}__")
+    
+      except MessageIdInvalidError:
+        
         pass
