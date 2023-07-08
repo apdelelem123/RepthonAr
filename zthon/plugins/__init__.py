@@ -18,7 +18,7 @@ from ..core.session import zedub
 from ..helpers import *
 from ..helpers.utils import _zedtools, _zedutils, _format, install_pip, reply_id
 from ..sql_helper.globals import gvarstatus
-from zthon.helpers.functions.musictool import 
+from zthon.helpers.functions.musictool import song_download
 
 # =================== CONSTANT ===================
 bot = zedub
