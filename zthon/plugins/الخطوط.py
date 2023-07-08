@@ -68,7 +68,6 @@ isitalic = gvarstatus("italic")
 if isitalic:
     
     try:
-    
     await event.edit(f"__{event.message.message}__")
     
       except MessageIdInvalidError:
