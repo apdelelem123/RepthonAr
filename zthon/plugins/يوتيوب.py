@@ -32,6 +32,7 @@ from yt_dlp.utils import (
     XAttrMetadataError,
 )
 
+from ..Config import Config
 from ..core import pool
 from ..core.logger import logging
 from ..core.managers import edit_delete, edit_or_reply
@@ -91,7 +92,7 @@ async def ytdl_down(event, opts, url):
     except ExtractorError:
         await event.edit("**حدث خطأ أثناء استخراج المعلومات يرجى وضعها بشكل صحيح ⚠️**")
     except Exception as e:
-        await event.edit(f"**Error : **\n__{e}__")
+        await event.edit(f"**- خطـأ : **\n__{e}__")
     return ytdl_data
 
 
@@ -169,7 +170,7 @@ async def download_audio(event):
     urls = extractor.find_urls(msg)
     if not urls:
         return await edit_or_reply(event, "**- قـم بادخــال رابـط مع الامـر او بالــرد ع رابـط ليتـم التحميـل**")
-    zedevent = await edit_or_reply(event, "**⌔╎جـارِ التحميل انتظر قليلا ▬▭ ...**")
+    zedevent = await edit_or_reply(event, "**⎉╎جـارِ التحميل انتظر قليلا ▬▭ ...**")
     reply_to_id = await reply_id(event)
     for url in urls:
         try:
@@ -257,7 +258,7 @@ async def download_video(event):
     urls = extractor.find_urls(msg)
     if not urls:
         return await edit_or_reply(event, "**- قـم بادخــال رابـط مع الامـر او بالــرد ع رابـط ليتـم التحميـل**")
-    zedevent = await edit_or_reply(event, "**⌔╎جـارِ التحميل انتظر قليلا ▬▭ ...**")
+    zedevent = await edit_or_reply(event, "**⎉╎جـارِ التحميل انتظر قليلا ▬▭ ...**")
     reply_to_id = await reply_id(event)
     for url in urls:
         ytdl_data = await ytdl_down(zedevent, video_opts, url)
@@ -298,7 +299,7 @@ async def download_video(event):
                 event.chat_id,
                 file=media,
                 reply_to=reply_to_id,
-                caption=f'**- المقطــع :** `{ytdl_data["title"]}`',
+                caption=f'**⎉╎المقطــع :** `{ytdl_data["title"]}`',
                 thumb=catthumb,
             )
             os.remove(f)
@@ -329,7 +330,7 @@ async def download_video(event):
     urls = extractor.find_urls(msg)
     if not urls:
         return await edit_or_reply(event, "**- قـم بادخــال رابـط مع الامـر او بالــرد ع رابـط ليتـم التحميـل**")
-    zedevent = await edit_or_reply(event, "**⌔╎جـارِ التحميل مـن فيـس بـوك انتظر قليلا ▬▭ ...**")
+    zedevent = await edit_or_reply(event, "**⎉╎جـارِ التحميل مـن فيـس بـوك انتظر قليلا ▬▭ ...**")
     reply_to_id = await reply_id(event)
     for url in urls:
         ytdl_data = await ytdl_down(zedevent, video_opts, url)
@@ -370,7 +371,7 @@ async def download_video(event):
                 event.chat_id,
                 file=media,
                 reply_to=reply_to_id,
-                caption=f'**- المقطــع :** `{ytdl_data["title"]}`',
+                caption=f'**⎉╎المقطــع :** `{ytdl_data["title"]}`',
                 thumb=catthumb,
             )
             os.remove(f)
@@ -401,7 +402,7 @@ async def download_video(event):
     urls = extractor.find_urls(msg)
     if not urls:
         return await edit_or_reply(event, "**- قـم بادخــال رابـط مع الامـر او بالــرد ع رابـط ليتـم التحميـل**")
-    zedevent = await edit_or_reply(event, "**⌔╎جـارِ التحميل انتظر قليلا ▬▭ ...**")
+    zedevent = await edit_or_reply(event, "**⎉╎جـارِ التحميل انتظر قليلا ▬▭ ...**")
     reply_to_id = await reply_id(event)
     for url in urls:
         ytdl_data = await ytdl_down(zedevent, video_opts, url)
@@ -442,7 +443,7 @@ async def download_video(event):
                 event.chat_id,
                 file=media,
                 reply_to=reply_to_id,
-                caption=f'**- المقطــع :** `{ytdl_data["title"]}`',
+                caption=f'**⎉╎المقطــع :** `{ytdl_data["title"]}`',
                 thumb=catthumb,
             )
             os.remove(f)
@@ -452,14 +453,15 @@ async def download_video(event):
             await asyncio.sleep(2)
     await event.delete()
 
+
 @zedub.zed_cmd(
-    pattern="لايكي(?:\s|$)([\s\S]*)",
-    command=("لايكي", plugin_category),
+    pattern="تيك(?:\s|$)([\s\S]*)",
+    command=("تيك", plugin_category),
     info={
-        "header": "تحميـل مقـاطـع الفيـديــو مـن لايكـي عـبر الرابـط",
+        "header": "تحميـل مقـاطـع الفيـديــو مـن تيـك تـوك عـبر الرابـط",
         "مثــال": [
-            "{tr}لايكي بالــرد ع رابــط",
-            "{tr}لايكي + رابــط",
+            "{tr}تيك بالــرد ع رابــط",
+            "{tr}تيك + رابــط",
         ],
     },
 )
@@ -472,7 +474,7 @@ async def download_video(event):
     urls = extractor.find_urls(msg)
     if not urls:
         return await edit_or_reply(event, "**- قـم بادخــال رابـط مع الامـر او بالــرد ع رابـط ليتـم التحميـل**")
-    zedevent = await edit_or_reply(event, "**⌔╎جـارِ التحميل انتظر قليلا ▬▭ ...**")
+    zedevent = await edit_or_reply(event, "**⎉╎جـارِ التحميل انتظر قليلا ▬▭ ...**")
     reply_to_id = await reply_id(event)
     for url in urls:
         ytdl_data = await ytdl_down(zedevent, video_opts, url)
@@ -513,7 +515,7 @@ async def download_video(event):
                 event.chat_id,
                 file=media,
                 reply_to=reply_to_id,
-                caption=f'**- المقطــع :** `{ytdl_data["title"]}`',
+                caption=f'**⎉╎المقطــع :** `{ytdl_data["title"]}`',
                 thumb=catthumb,
             )
             os.remove(f)
@@ -541,7 +543,7 @@ async def download_audio(event):
     urls = extractor.find_urls(msg)
     if not urls:
         return await edit_or_reply(event, "**- قـم بادخــال رابـط مع الامـر او بالــرد ع رابـط ليتـم التحميـل**")
-    zedevent = await edit_or_reply(event, "**⌔╎جـارِ التحميل انتظر قليلا ▬▭ ...**")
+    zedevent = await edit_or_reply(event, "**⎉╎جـارِ التحميل انتظر قليلا ▬▭ ...**")
     reply_to_id = await reply_id(event)
     for url in urls:
         try:
@@ -609,126 +611,145 @@ async def download_audio(event):
     await zedevent.delete()
 
 
-@zedub.zed_cmd(
-    pattern="انستا(?: |$)([\s\S]*)",
-    command=("انستا", plugin_category),
-    info={
-        "header": "لـ تحميـل الصـور والفيـديـو مـن الانستـا",
-        "مثــال": [
-            "{tr}انستا + رابــط",
-        ],
-    },
-)
-async def insta_dl(event):
-    "For downloading instagram media"
+#Code by T.me/zzzzl1l
+@zedub.zed_cmd(pattern="انستا(?: |$)([\s\S]*)")
+async def zelzal_gif(event):
     link = event.pattern_match.group(1)
     reply = await event.get_reply_message()
     if not link and reply:
         link = reply.text
     if not link:
-        return await edit_delete(event, "**- احتـاج الـر رابــط للتحميــل**", 10)
+        return await edit_delete(event, "**- ارسـل (.انستا) + رابـط او بالـرد ع رابـط**", 10)
     if "instagram.com" not in link:
         return await edit_delete(
-            event, "**- احتـاج الـر رابــط للتحميــل**", 10
+            event, "**- احتـاج الـى رابــط من الانستـا .. للتحميــل ؟!**", 10
         )
-    v1 = "@instasave_bot"
-    v2 = "@videomaniacbot"
-    media_list = []
-    zedevent = await edit_or_reply(event, "**⌔╎جـارِ التحميل انتظر قليلا ▬▭ ...**")
-    async with event.client.conversation(v1) as conv:
+    chat = "@FullSavebot" #Code by T.me/zzzzl1l
+    zed = await edit_or_reply(event, "**⎉╎جـارِ التحميل من الانستـا .. انتظر قليلا ▬▭**")
+    async with borg.conversation(chat) as conv: #Code by T.me/zzzzl1l
         try:
-            v1_flag = await conv.send_message("/start")
-        except YouBlockedUserError:
-            await edit_or_reply(
-                zedevent, "**خطــأ :** Trying to unblock & retry, wait a sec..."
-            )
-            await zedub(unblock("instasave_bot"))
-            v1_flag = await conv.send_message("/start")
-        response = await conv.get_response()
-        checker = response.text
-        await event.client.send_read_acknowledge(conv.chat_id)
-        if checker == "Welcome!":
+            await conv.send_message("/start")
+            await conv.get_response()
+            await conv.send_message(link) #Code by T.me/zzzzl1l
+            await conv.get_response()
             await asyncio.sleep(2)
-            await conv.send_message(link)
-            media = await conv.get_response()
-            await event.client.send_read_acknowledge(conv.chat_id)
-            if media.media:
-                if media.grouped_id:
-                    while media.grouped_id:
-                        media_list.append(media)
-                        media = await conv.get_response()
-                else:
-                    media_list.append(media)
-                    media = await conv.get_response()
-                    await event.client.send_read_acknowledge(conv.chat_id)
-                details = media.message.splitlines()
-                await zedevent.delete()
-                await event.client.send_file(
-                    event.chat_id,
-                    media_list,
-                    caption=f"**{details[0]}**",
-                )
-                return await delete_conv(event, v1, v1_flag)
-            checker = media.message.splitlines()[2]
-        await delete_conv(event, v1, v1_flag)
-        await edit_or_reply(zedevent, "**Switching v2...**")
-        async with event.client.conversation(v2) as conv:
-            try:
-                v2_flag = await conv.send_message("/start")
-            except YouBlockedUserError:
-                await edit_or_reply(
-                    zedevent, "**خطــأ :** Trying to unblock & retry, wait a sec..."
-                )
-                await zedub(unblock("videomaniacbot"))
-                v2_flag = await conv.send_message("/start")
+            zedthon = await conv.get_response()
+            await zed.delete()
+            await borg.send_file(
+                event.chat_id,
+                zedthon,
+                caption=f"<b>⎉╎تم التحميـل من انستجـرام 🎬 .. بنجاح ✅</b>",
+                parse_mode="html",
+            )
+        except YouBlockedUserError: #Code by T.me/zzzzl1l
+            await zedub(unblock("FullSavebot"))
+            await conv.send_message("/start")
             await conv.get_response()
-            await event.client.send_read_acknowledge(conv.chat_id)
-            await asyncio.sleep(1)
             await conv.send_message(link)
             await conv.get_response()
-            await event.client.send_read_acknowledge(conv.chat_id)
-            media = await conv.get_response()
-            await event.client.send_read_acknowledge(conv.chat_id)
-            if media.media:
-                if BOTLOG and "join the channel" in checker:
-                    error = checker.splitlines()[2]
-                    await event.client.send_message(
-                        BOTLOG_CHATID,
-                        f"**#V1_ERROR :-**\n\n__Currently we using @instasave_bot for v1, that need users to join this chat : {error}__\n\n__If you know any good bot which does'nt need join channel, inform us here: @catuserbot_support__",
-                    )
-                await zedevent.delete()
-                await event.client.send_file(event.chat_id, media)
-            else:
-                await edit_delete(
-                    zedevent,
-                    f"**#ERROR\nv1 :** __{checker}__\n\n**v2 :**__ {media.text}__",
-                    40,
-                )
-            await delete_conv(event, v2, v2_flag)
+            await asyncio.sleep(2)
+            zedthon = await conv.get_response()
+            await zed.delete()
+            await borg.send_file(
+                event.chat_id,
+                zedthon,
+                caption=f"<b>⎉╎تم التحميـل من انستجـرام 🎬 .. بنجاح ✅</b>",
+                parse_mode="html",
+            )
 
 
-@zedub.zed_cmd(
-    pattern="بنترست?(?:\s|$)([\s\S]*)",
-    command=("بنترست", plugin_category),
-    info={
-        "header": "تحميـل مقـاطـع الفيـديـو والصــور مـن بنتـرسـت عـبر الرابـط",
-        "مثــال": ["{tr}بنترست + رابــط"],
-    },
-)
-async def _(event):
-    M = event.pattern_match.group(1)
-    links = re.findall(r"\bhttps?://.*\.\S+", M)
-    await event.delete()
-    if not links:
-        N = await event.respond("**ارسل الامـر + الرابـط ... 🧸🎈**")
-        await asyncio.sleep(2)
-        await N.delete()
-    else:
-        pass
-    A = await event.respond("**╮•⎚ جـارِ التحميل مـن بنتـرسـت ... 🧸🎈**")
-    ZZZZL1L = get_download_url(M)
-    await event.client.send_file(event.chat.id, ZZZZL1L)
-    await A.delete()
+#Code by T.me/zzzzl1l
+@zedub.zed_cmd(pattern="لايكي(?: |$)([\s\S]*)")
+async def zelzal_lik(event):
+    link = event.pattern_match.group(1)
+    reply = await event.get_reply_message()
+    if not link and reply:
+        link = reply.text
+    if not link:
+        return await edit_delete(event, "**- ارسـل (.لايكي) + رابـط او بالـرد ع رابـط**", 10)
+    if "likee" not in link:
+        return await edit_delete(
+            event, "**- احتـاج الـى رابــط من لايكـي .. للتحميــل ؟!**", 10
+        )
+    chat = "@savetok_bot" #Code by T.me/zzzzl1l
+    zed = await edit_or_reply(event, "**⎉╎جـارِ التحميل من لايكـي .. انتظر قليلا ▬▭**")
+    async with borg.conversation(chat) as conv: #Code by T.me/zzzzl1l
+        try:
+            await conv.send_message("/start")
+            await conv.get_response()
+            await conv.send_message(link) #Code by T.me/zzzzl1l
+            await conv.get_response()
+            await asyncio.sleep(2)
+            zedthon = await conv.get_response()
+            await zed.delete()
+            await borg.send_file(
+                event.chat_id,
+                zedthon,
+                caption=f"<b>⎉╎تم التحميـل من لايكـي 🎬 .. بنجاح ✅</b>",
+                parse_mode="html",
+            )
+        except YouBlockedUserError: #Code by T.me/zzzzl1l
+            await zedub(unblock("savetok_bot"))
+            await conv.send_message("/start")
+            await conv.get_response()
+            await conv.send_message(link)
+            await conv.get_response()
+            await asyncio.sleep(2)
+            zedthon = await conv.get_response()
+            await zed.delete()
+            await borg.send_file(
+                event.chat_id,
+                zedthon,
+                caption=f"<b>⎉╎تم التحميـل من لايكـي 🎬 .. بنجاح ✅</b>",
+                parse_mode="html",
+            )
+
+
+#Code by T.me/zzzzl1l
+@zedub.zed_cmd(pattern="بنترست(?: |$)([\s\S]*)")
+async def zelzal_pin(event):
+    link = event.pattern_match.group(1)
+    reply = await event.get_reply_message()
+    if not link and reply:
+        link = reply.text
+    if not link:
+        return await edit_delete(event, "**- ارسـل (.بنترست) + رابـط او بالـرد ع رابـط**", 10)
+    if "pin" not in link:
+        return await edit_delete(
+            event, "**- احتـاج الـى رابــط من بنتـرسـت .. للتحميــل ؟!**", 10
+        )
+    chat = "@GoPinterestBot" #Code by T.me/zzzzl1l
+    zed = await edit_or_reply(event, "**⎉╎جـارِ التحميل من بنتـرسـت .. انتظر قليلا ▬▭**")
+    async with borg.conversation(chat) as conv: #Code by T.me/zzzzl1l
+        try:
+            await conv.send_message("/start")
+            await conv.get_response()
+            await conv.send_message(link) #Code by T.me/zzzzl1l
+            await conv.get_response()
+            await asyncio.sleep(2)
+            zedthon = await conv.get_response()
+            await zed.delete()
+            await borg.send_file(
+                event.chat_id,
+                zedthon,
+                caption=f"<b>⎉╎تم التحميـل من بنتـرسـت 🎬 .. بنجاح ✅</b>",
+                parse_mode="html",
+            )
+        except YouBlockedUserError: #Code by T.me/zzzzl1l
+            await zedub(unblock("GoPinterestBot"))
+            await conv.send_message("/start")
+            await conv.get_response()
+            await conv.send_message(link)
+            await conv.get_response()
+            await asyncio.sleep(2)
+            zedthon = await conv.get_response()
+            await zed.delete()
+            await borg.send_file(
+                event.chat_id,
+                zedthon,
+                caption=f"<b>⎉╎تم التحميـل من بنتـرسـت 🎬 .. بنجاح ✅</b>",
+                parse_mode="html",
+            )
 
 
 @zedub.zed_cmd(
@@ -764,5 +785,5 @@ async def yt_search(event):
         full_response = await ytsearch(query, limit=lim)
     except Exception as e:
         return await edit_delete(video_q, str(e), time=10, parse_mode=_format.parse_pre)
-    reply_text = f"**•  اليك عزيزي قائمة بروابط الكلمة اللتي بحثت عنها:**\n`{query}`\n\n**•  النتائج:**\n{full_response}"
+    reply_text = f"**⎉╎اليك عزيزي قائمة بروابط الكلمة اللتي بحثت عنها:**\n`{query}`\n\n**⎉╎النتائج:**\n{full_response}"
     await edit_or_reply(video_q, reply_text)
