@@ -35,7 +35,7 @@ async def btext(event):
         await edit_delete(event, "**⎉╎ تم اطفاء خط الرمز بنجاح ✓ **")
         return
 
-@zedub.on(admin_cmd(pattern="(خط مائل|الخط المائل))    
+@zedub.on(admin_cmd(pattern="(خط مائل|الخط المائل"))    
 async def btext(event):
     isitalic = gvarstatus("italic")
     if not isitalic:
