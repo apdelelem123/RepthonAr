@@ -1,6 +1,7 @@
 # Repthon - Roger
 # © Repthon Team 2023
 # ها شعدك داخل ع الملف تريد تخمط ؟ ابو زربة لهل درجة فاشل  
+
 from telethon import events
 from zthon import zedub
 from ..sql_helper.globals import addgvar, delgvar, gvarstatus
@@ -23,6 +24,7 @@ async def btext(event):
         await edit_delete(event, "**⎉╎ تم اطفاء خط الغامق بنجاح ✓ **")
         return
 
+
 @zedub.on(admin_cmd(pattern="(خط رمز|خط الرمز)"))
 async def btext(event):
     isramz = gvarstatus("ramz")
@@ -36,6 +38,7 @@ async def btext(event):
         await edit_delete(event, "**⎉╎ تم اطفاء خط الرمز بنجاح ✓ **")
         return
 
+
 @zedub.on(admin_cmd(pattern="(خط مائل|الخط المائل"))    
 async def btext(event):
     isitalic = gvarstatus("italic")
@@ -48,6 +51,7 @@ async def btext(event):
         delgvar("italic")
         await edit_delete(event, "**⎉╎ تم إطفاء خط مائل بنجاح ✓**")
         return
+
 
 @zedub.on(events.NewMessage(outgoing=True))
 async def baqir(event):
@@ -66,7 +70,6 @@ async def baqir(event):
             pass
 
     isitalic = gvarstatus("italic")
-    
     if isitalic:
         try:
             await event.edit(f"__{event.message.message}__")
