@@ -5,7 +5,7 @@
 from telethon import events
 from zthon import zedub
 from ..sql_helper.globals import addgvar, delgvar, gvarstatus
-from ..core.managers import edit_delete
+from ..core.managers import edit_delete, edit_or_reply
 from telethon import functions
 from telethon.errors.rpcerrorlist import MessageIdInvalidError
 from zthon.utils import admin_cmd
