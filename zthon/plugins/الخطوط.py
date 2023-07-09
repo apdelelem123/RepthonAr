@@ -39,7 +39,7 @@ async def btext(event):
         return
 
 
-@zedub.on(admin_cmd(pattern="(خط مائل|الخط المائل"))    
+@zedub.on(admin_cmd(pattern="(خط مائل|الخط المائل)"))  
 async def btext(event):
     isitalic = gvarstatus("italic")
     if not isitalic:
