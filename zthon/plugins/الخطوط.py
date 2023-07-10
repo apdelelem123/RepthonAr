@@ -61,7 +61,7 @@ async def btext(event):
         await edit_delete(event, "**⎉╎ تم تفعيل خط مائل بنجاح ✓**")
         return      
   
-    if italic:
+    if isitalic:
         delgvar("italic")
         await edit_delete(event, "**⎉╎ تم إطفاء خط مائل بنجاح ✓**")
         return
