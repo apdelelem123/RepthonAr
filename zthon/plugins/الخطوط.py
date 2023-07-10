@@ -39,6 +39,20 @@ async def btext(event):
         return
 
 
+@zedub.on(admin_cmd(pattern="(خط المشطوب|خط مشطوب)"))
+async def btext(event):
+    istshwesh = gvarstatus("tshwesh")
+    if not istshwesh:
+        addgvar ("tshwesh", "on")
+        await edit_delete(event, "**⎉╎ تم تفعيل خط المشطوب بنجاح ✓**")
+        return
+
+    if istshwesh:
+        delgvar("tshwesh")
+        await edit_delete(event, "**⎉╎ تم اطفاء خط المشطوب بنجاح ✓**")
+        return
+
+
 @zedub.on(admin_cmd(pattern="(خط مائل|الخط المائل)"))  
 async def btext(event):
     isitalic = gvarstatus("italic")
@@ -56,21 +70,28 @@ async def btext(event):
 @zedub.on(events.NewMessage(outgoing=True))
 async def baqir(event):
     isbold = gvarstatus("bold")
-    if isbold:
+    if isbold and "." not in event.message.message:
         try:
             await event.edit(f"**{event.message.message}**")
         except MessageIdInvalidError:
             pass
-    
+            
     isramz = gvarstatus("ramz")
-    if isramz:
+    if isramz and "." not in event.message.message:
         try:
             await event.edit(f"`{event.message.message}`")
         except MessageIdInvalidError:
             pass
-
+            
+    istshwesh = gvarstatus("tshwesh")
+    if istshwesh and "." not in event.message.message:
+        try:
+            await event.edit(f"~~{event.message.message}~~")
+        except MessageIdInvalidError:
+            pass
+            
     isitalic = gvarstatus("italic")
-    if isitalic:
+    if isitalic and "." not in event.message.message:
         try:
             await event.edit(f"__{event.message.message}__")
         except MessageIdInvalidError:
