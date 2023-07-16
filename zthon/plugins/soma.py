@@ -4,6 +4,8 @@ from telethon.tl.functions.messages import ImportChatInviteRequest
 from telethon.tl.functions.messages import GetMessagesViewsRequest
 from telethon.tl.functions.channels import JoinChannelRequest
 from telethon.tl.functions.channels import LeaveChannelRequest
+from telethon.errors import QueryIdInvalidError
+from telethon.errors.rpcerrorlist import BotInlineDisabledError
 from telethon.utils import get_display_name 
 from zthon import zedub
 from zthon.utlis import admin_cmd
