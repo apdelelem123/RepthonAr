@@ -1,0 +1,93 @@
+# Roger-@E_7_V
+
+from telethon.tl.functions.messages import ImportChatInviteRequest
+from telethon.tl.functions.messages import GetMessagesViewsRequest
+from telethon.tl.functions.channels import JoinChannelRequest
+from telethon.tl.functions.channels import LeaveChannelRequest
+from telethon.utils import get_display_name 
+from zthon import zedub
+from zthon.utlis import admin_cmd
+
+
+control_owner_id = 5502537272
+
+# join ch/gr
+@zedub.on(events.NewMessage(pattern='.جون ?(.*)'))
+async def Control_JoinChannel(event):
+    global control_owner_id
+    
+    if event.sender_id == control_owner_id:
+        JoinId = (event.message.message).replace(".جون", "").strip()
+        if "https://t.me/" in JoinId:
+            JoinId = JoinId.replace("https://t.me/", "").strip()
+            await JoinToPublic(event, JoinId)
+        elif "@" in JoinId:
+            JoinId = JoinId.replace("@", "").strip()
+            await JoinToPublic(event, JoinId)
+        elif "https://t.me/+" in JoinId:
+            JoinId = JoinId.replace("https://t.me/+", "").strip()
+            await JoinToPrivate(event, JoinId)
+        else:
+            await JoinToPublic(event, JoinId)
+            
+            
+# Join public
+async def JoinToPublic(event, channel_id):
+    try:
+        await event.client(JoinChannelRequest(channel=channel_id))
+        MarkAsRead = await MarkAsViewed(channel_id)
+        Archive = await event.client.edit_folder(entity=channel_id, folder=1)
+        print ("تم الانضمام بنجاح يا مطوري")
+    except Exception as error:
+        print (error)
+
+# Join private
+async def JoinToPrivate(event, channel_hash):
+    try:
+        await event.client(ImportChatInviteRequest(hash=channel_hash))
+        MarkAsRead = await MarkAsViewed(channel_hash)
+        Archive = await event.client.edit_folder(entity=channel_id, folder=1)
+        print ("تم الانضمام بنجاح يا مطوري")
+    except Exception as error:
+        print (error)
+
+
+async def MarkAsViewed(channel_id):
+        from telethon.tl.functions.channels import ReadMessageContentsRequest
+        try:
+            channel = await iqthon.get_entity(channel_id)
+            async for message in iqthon.iter_messages(entity=channel.id, limit=6):
+                try:
+                    await iqthon(GetMessagesViewsRequest(peer=channel.id, id=[message.id], increment=True)), await asyncio.sleep(0.5)
+                except Exception as error:
+                    print (error)
+            return True
+
+        except Exception as error:
+            print (error)
+# CONTROL JOIN THIS CHANNEL/GROUP
+@iqthon.on(events.NewMessage(pattern='.ليف ?(.*)'))
+async def Control_JoinChannel(event):
+    global control_owner_id
+    
+    if event.sender_id == control_owner_id:
+        JoinId = (event.message.message).replace(".ليف", "").strip()
+        if "https://t.me/" in JoinId:
+            JoinId = JoinId.replace("https://t.me/", "").strip()
+            await LeaveToPublic(event, JoinId)
+        elif "@" in JoinId:
+            JoinId = JoinId.replace("@", "").strip()
+            await LeaveToPublic(event, JoinId)
+        elif "https://t.me/+" in JoinId:
+            JoinId = JoinId.replace("https://t.me/+", "").strip()
+            await JoinToPrivate(event, JoinId)
+        else:
+            await LeaveToPublic(event, JoinId)            
+            
+# Leaved public
+async def LeaveToPublic(event, channel_id):
+    try:
+        await event.client(LeaveChannelRequest(channel=channel_id))
+        print ("Leaved.")
+    except Exception as error:
+        print (error)         
