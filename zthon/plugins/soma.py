@@ -14,6 +14,8 @@ from zthon.utils import admin_cmd
 
 control_owner_id = [5502537272]
 
+
+
 # CONTROL JOIN THIS CHANNEL/GROUP
 @zedub.on(admin_cmd(outgoing=True, pattern='.انضم ?(.*)'))
 async def Control_JoinChannel(event):
