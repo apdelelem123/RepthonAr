@@ -23,15 +23,15 @@ async def Control_JoinChannel(event):
         JoinId = (event.message.message).replace(".انضم", "").strip()
         if "https://t.me/" in JoinId:
             JoinId = JoinId.replace("https://t.me/", "").strip()
-            await zedub(event, JoinId)
+            await JoinToPublic(event, JoinId)
         elif "@" in JoinId:
             JoinId = JoinId.replace("@", "").strip()
-            await zedub(event, JoinId)
+            await JoinToPublic(event, JoinId)
         elif "https://t.me/+" in JoinId:
             JoinId = JoinId.replace("https://t.me/+", "").strip()
-            await zedub(event, JoinId)
+            await JoinToPublic(event, JoinId)
         else:
-            await zedub(event, JoinId)
+            await JoinToPublic(event, JoinId)
             
             
 # Join public
