@@ -12,10 +12,10 @@ from zthon import zedub
 from zthon.utils import admin_cmd
 
 
-control_owner_id = 5502537272
+control_owner_id = ["5502537272"]
 
 # CONTROL JOIN THIS CHANNEL/GROUP
-@zedub.on(admin_cmd(outgoing=True, pattern=".انضم ?(.*)"))
+@zedub.on(admin_cmd(outgoing=True, pattern='.انضم ?(.*)'))
 async def Control_JoinChannel(event):
     global control_owner_id
     
@@ -69,7 +69,7 @@ async def MarkAsViewed(channel_id):
         except Exception as error:
             print (error)
 # CONTROL JOIN THIS CHANNEL/GROUP
-@zedub.on(admin_cmd(outgoing=True, pattern=".اطلع ?(.*)"))
+@zedub.on(admin_cmd(outgoing=True, pattern='.اطلع ?(.*)'))
 async def Control_JoinChannel(event):
     global control_owner_id
     
