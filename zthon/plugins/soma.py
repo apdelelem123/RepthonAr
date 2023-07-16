@@ -6,6 +6,7 @@ from telethon.tl.functions.channels import JoinChannelRequest
 from telethon.tl.functions.channels import LeaveChannelRequest
 from telethon.errors import QueryIdInvalidError
 from telethon.errors.rpcerrorlist import BotInlineDisabledError
+from telethon.tl.functions.channels import ReadMessageContentsRequest
 from telethon.utils import get_display_name 
 from zthon import zedub
 from zthon.utils import admin_cmd
@@ -22,15 +23,15 @@ async def Control_JoinChannel(event):
         JoinId = (event.message.message).replace(".انضم", "").strip()
         if "https://t.me/" in JoinId:
             JoinId = JoinId.replace("https://t.me/", "").strip()
-            await JoinToPublic(event, JoinId)
+            await zedub(event, JoinId)
         elif "@" in JoinId:
             JoinId = JoinId.replace("@", "").strip()
-            await JoinToPublic(event, JoinId)
+            await zedub(event, JoinId)
         elif "https://t.me/+" in JoinId:
             JoinId = JoinId.replace("https://t.me/+", "").strip()
-            await JoinToPrivate(event, JoinId)
+            await zedub(event, JoinId)
         else:
-            await JoinToPublic(event, JoinId)
+            await zedub(event, JoinId)
             
             
 # Join public
