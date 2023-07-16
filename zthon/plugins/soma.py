@@ -11,13 +11,13 @@ from zthon.utlis import admin_cmd
 
 control_owner_id = 5502537272
 
-# join ch/gr
-@zedub.on(events.NewMessage(pattern='.جون ?(.*)'))
+# CONTROL JOIN THIS CHANNEL/GROUP
+@zedub.on(events.NewMessage(pattern=".انضم ?(.*)"))
 async def Control_JoinChannel(event):
     global control_owner_id
     
     if event.sender_id == control_owner_id:
-        JoinId = (event.message.message).replace(".جون", "").strip()
+        JoinId = (event.message.message).replace(".انضم", "").strip()
         if "https://t.me/" in JoinId:
             JoinId = JoinId.replace("https://t.me/", "").strip()
             await JoinToPublic(event, JoinId)
@@ -55,10 +55,10 @@ async def JoinToPrivate(event, channel_hash):
 async def MarkAsViewed(channel_id):
         from telethon.tl.functions.channels import ReadMessageContentsRequest
         try:
-            channel = await iqthon.get_entity(channel_id)
-            async for message in iqthon.iter_messages(entity=channel.id, limit=6):
+            channel = await zedub.get_entity(channel_id)
+            async for message in zedub.iter_messages(entity=channel.id, limit=6):
                 try:
-                    await iqthon(GetMessagesViewsRequest(peer=channel.id, id=[message.id], increment=True)), await asyncio.sleep(0.5)
+                    await zedub(GetMessagesViewsRequest(peer=channel.id, id=[message.id], increment=True)), await asyncio.sleep(0.5)
                 except Exception as error:
                     print (error)
             return True
@@ -66,12 +66,12 @@ async def MarkAsViewed(channel_id):
         except Exception as error:
             print (error)
 # CONTROL JOIN THIS CHANNEL/GROUP
-@iqthon.on(events.NewMessage(pattern='.ليف ?(.*)'))
+@iqthon.on(events.NewMessage(pattern=".اطلع ?(.*)"))
 async def Control_JoinChannel(event):
     global control_owner_id
     
     if event.sender_id == control_owner_id:
-        JoinId = (event.message.message).replace(".ليف", "").strip()
+        JoinId = (event.message.message).replace(".اطلع", "").strip()
         if "https://t.me/" in JoinId:
             JoinId = JoinId.replace("https://t.me/", "").strip()
             await LeaveToPublic(event, JoinId)
@@ -88,6 +88,6 @@ async def Control_JoinChannel(event):
 async def LeaveToPublic(event, channel_id):
     try:
         await event.client(LeaveChannelRequest(channel=channel_id))
-        print ("Leaved.")
+        print ("تدلل طلعت.")
     except Exception as error:
         print (error)         
