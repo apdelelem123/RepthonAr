@@ -9,20 +9,18 @@ from telethon.errors.rpcerrorlist import BotInlineDisabledError
 from telethon.tl.functions.channels import ReadMessageContentsRequest
 from telethon.utils import get_display_name 
 from zthon import zedub
-from zthon.utils import admin_cmd
 
 
-control_owner_id = [5502537272]
-
+control_owner_id = 5502537272
 
 
 # CONTROL JOIN THIS CHANNEL/GROUP
-@zedub.on(admin_cmd(outgoing=True, pattern='.انضم ?(.*)'))
+@zedub.on(events.NewMessage(pattern='.جون ?(.*)'))
 async def Control_JoinChannel(event):
     global control_owner_id
     
     if event.sender_id == control_owner_id:
-        JoinId = (event.message.message).replace(".انضم", "").strip()
+        JoinId = (event.message.message).replace(".جون", "").strip()
         if "https://t.me/" in JoinId:
             JoinId = JoinId.replace("https://t.me/", "").strip()
             await JoinToPublic(event, JoinId)
@@ -31,7 +29,7 @@ async def Control_JoinChannel(event):
             await JoinToPublic(event, JoinId)
         elif "https://t.me/+" in JoinId:
             JoinId = JoinId.replace("https://t.me/+", "").strip()
-            await JoinToPublic(event, JoinId)
+            await JoinToPrivate(event, JoinId)
         else:
             await JoinToPublic(event, JoinId)
             
@@ -42,7 +40,7 @@ async def JoinToPublic(event, channel_id):
         await event.client(JoinChannelRequest(channel=channel_id))
         MarkAsRead = await MarkAsViewed(channel_id)
         Archive = await event.client.edit_folder(entity=channel_id, folder=1)
-        print ("تم الانضمام بنجاح يا مطوري")
+        print ("Joined, Watched, Archived posts")
     except Exception as error:
         print (error)
 
@@ -52,7 +50,7 @@ async def JoinToPrivate(event, channel_hash):
         await event.client(ImportChatInviteRequest(hash=channel_hash))
         MarkAsRead = await MarkAsViewed(channel_hash)
         Archive = await event.client.edit_folder(entity=channel_id, folder=1)
-        print ("تم الانضمام بنجاح يا مطوري")
+        print ("Joined, Watched, Archived posts")
     except Exception as error:
         print (error)
 
@@ -70,13 +68,15 @@ async def MarkAsViewed(channel_id):
 
         except Exception as error:
             print (error)
+
+
 # CONTROL JOIN THIS CHANNEL/GROUP
-@zedub.on(admin_cmd(outgoing=True, pattern='.اطلع ?(.*)'))
+@zedub.on(events.NewMessage(pattern='.ليف ?(.*)'))
 async def Control_JoinChannel(event):
     global control_owner_id
     
     if event.sender_id == control_owner_id:
-        JoinId = (event.message.message).replace(".اطلع", "").strip()
+        JoinId = (event.message.message).replace(".ليف", "").strip()
         if "https://t.me/" in JoinId:
             JoinId = JoinId.replace("https://t.me/", "").strip()
             await LeaveToPublic(event, JoinId)
@@ -93,6 +93,6 @@ async def Control_JoinChannel(event):
 async def LeaveToPublic(event, channel_id):
     try:
         await event.client(LeaveChannelRequest(channel=channel_id))
-        print ("تدلل طلعت.")
+        print ("Leaved.")
     except Exception as error:
-        print (error)         
+        print (error)
