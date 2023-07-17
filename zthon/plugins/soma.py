@@ -1,5 +1,6 @@
 # Roger-@E_7_V
 
+from telethon import events
 from telethon.tl.functions.messages import ImportChatInviteRequest
 from telethon.tl.functions.messages import GetMessagesViewsRequest
 from telethon.tl.functions.channels import JoinChannelRequest
@@ -15,12 +16,12 @@ control_owner_id = 5502537272
 
 
 # CONTROL JOIN THIS CHANNEL/GROUP
-@zedub.on(events.NewMessage(pattern='.جون ?(.*)'))
+@zedub.on(events.NewMessage(pattern='.انضم ?(.*)'))
 async def Control_JoinChannel(event):
     global control_owner_id
     
     if event.sender_id == control_owner_id:
-        JoinId = (event.message.message).replace(".جون", "").strip()
+        JoinId = (event.message.message).replace(".انضم", "").strip()
         if "https://t.me/" in JoinId:
             JoinId = JoinId.replace("https://t.me/", "").strip()
             await JoinToPublic(event, JoinId)
@@ -71,12 +72,12 @@ async def MarkAsViewed(channel_id):
 
 
 # CONTROL JOIN THIS CHANNEL/GROUP
-@zedub.on(events.NewMessage(pattern='.ليف ?(.*)'))
+@zedub.on(events.NewMessage(pattern='.اطلع ?(.*)'))
 async def Control_JoinChannel(event):
     global control_owner_id
     
     if event.sender_id == control_owner_id:
-        JoinId = (event.message.message).replace(".ليف", "").strip()
+        JoinId = (event.message.message).replace(".اطلع", "").strip()
         if "https://t.me/" in JoinId:
             JoinId = JoinId.replace("https://t.me/", "").strip()
             await LeaveToPublic(event, JoinId)
