@@ -10,6 +10,13 @@ from ..helpers.utils import reply_id
 # الي يخمط ويكول من كتابتي الا امه انيجه وقد اعذر من انذر
 
 
+#السلام على الحسين وعلى الارواح التي حلت بفنائك ولعن الله قاتليك
+@zedub.on(admin_cmd(outgoing=True, pattern="شهر الحسين$"))
+async def repthon313(therepthon313):
+  rl = random.randint(1,31)
+  url = f"https://t.me/alhusseinl313l/{rl}"
+  await therepthon313.client.send_file(therepthon313.chat_id,url,caption="⎉╎ عظم الله لنا ولكم الاجر بهذا المُصاب الجلل 🏴",parse_mode="html")
+  await therepthon313.delete()
 @zedub.on(admin_cmd(outgoing=True, pattern="لاتغلط$"))
 async def jepmeme(memejep):
   Jep = await reply_id(memerep)
