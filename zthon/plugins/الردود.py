@@ -1,10 +1,8 @@
-# ported from paperplaneExtended by avinashreddy3108 for media support
 import re
 
 from telethon.utils import get_display_name
 
 from zthon import zedub
-
 from ..core.managers import edit_or_reply
 from ..sql_helper.filter_sql import (
     add_filter,
@@ -17,8 +15,8 @@ from . import BOTLOG, BOTLOG_CHATID
 plugin_category = "العروض"
 
 
-BaqirWF_cmd = (
-    "𓆩 [𝗦𝗼𝘂𝗿𝗰𝗲 𝗥𝗲𝗽𝘁𝗵𝗼𝗻 𝗖𝗼𝗻𝗳𝗶𝗴 - اوامـر الـردود / والتـرحيب](t.me/Repthon) 𓆪\n\n"
+RepthonWF_cmd = (
+    "𓆩 [𝗦𝗼𝘂𝗿𝗰𝗲 𝗥𝗲𝗽𝘁𝗵𝗼𝗻 - اوامـر الـردود / والتـرحيب](t.me/Repthon) 𓆪\n\n"
     "**✾╎قائـمه اوامـر الـردود 🦾 :** \n\n"
     "**⎞𝟏⎝** `.رد`\n"
     "**•• ⦇الامـر + اسـم الـرد بالـرد ع كلمـة الـرد او بالـرد ع ميديـا⦈ لـ اضـافة رد بالكـروب**\n\n"
@@ -42,24 +40,22 @@ BaqirWF_cmd = (
     "**•• لـ حـذف تـرحيـب الخـاص**\n\n"
     "**⎞𝟏𝟎⎝** `.جلب رحب`\n"
     "**•• لـ جـلب تـرحيـب الخـاص **\n\n"
-    "\n 𓆩 [𝙎𝙊𝙐𝙍𝘾𝞝 𝗥𝗲𝗽𝘁𝗵𝗼𝗻](t.me/Repthon) 𓆪"
+    "\n 𓆩 [𝙎𝙊𝙐𝙍𝘾𝞝 𝙍𝙀𝙋𝙏𝙃𝙊𝙉](t.me/Repthon) 𓆪"
 )
 
 
 # Copyright (C) 2022 Zed-Thon . All Rights Reserved
 @zedub.zed_cmd(pattern="الردود")
 async def cmd(baqir):
-    await edit_or_reply(baqir, BaqirWF_cmd)
+    await edit_or_reply(baqir, RepthonWF_cmd)
 
 @zedub.zed_cmd(pattern="الترحيب")
-async def cmd(baqir):
-    await edit_or_reply(baqir, BaqirWF_cmd)
+async def cmd(roger):
+    await edit_or_reply(roger, RepthonWF_cmd)
 
 
 @zedub.zed_cmd(incoming=True)
-async def filter_incoming_handler(event):  # sourcery no-metrics
-    if event.sender_id == event.client.uid:
-        return
+async def filter_incoming_handler(event):
     name = event.raw_text
     filters = get_filters(event.chat_id)
     if not filters:
@@ -151,9 +147,9 @@ async def add_new_filter(event):
             await event.client.send_message(
                 BOTLOG_CHATID,
                 f"#الــردود\
-            \n ⪼ ايدي الدردشه: {event.chat_id}\
-            \n ⪼ الرد: {keyword}\
-            \n ⪼ يتم حفظ الرسالة التالية كبيانات رد على المستخدمين في الدردشه ، يرجى عدم حذفها !!",
+            \n**⪼ ايـدي الدردشـه :**  {event.chat_id}\
+            \n**⪼ الــرد :**  {keyword}\
+            \n**⪼ تم حفظ الرسـالة كـرد على المستخدمين في المجموعـة المحـددة ...**",
             )
             msg_o = await event.client.forward_messages(
                 entity=BOTLOG_CHATID,
@@ -165,20 +161,20 @@ async def add_new_filter(event):
         else:
             await edit_or_reply(
                 event,
-                "**❈╎يتطلب رد ميديـا تعيين كـروب السجـل اولاً ..**\n**❈╎لاضافـة كـروب السجـل**\n**❈╎اتبـع الشـرح ⇚** https://t.me/zzzvrr/13",
+                "**❈╎يتطلب رد ميديـا تعيين كـروب السجـل اولاً ..**\n**❈╎لاضافـة كـروب السجـل**\n**❈╎اتبـع الشـرح ⇚**",
             )
             return
     elif msg and msg.text and not string:
         string = msg.text
     elif not string:
-        return await edit_or_reply(event, "__What should i do ?__")
-    success = "**- ❝ الـرد ↫** {} **تـم {} لـ الميديـا بـ نجـاح 🎆☑️𓆰**"
+        return await edit_or_reply(event, "**- يجب استخدام الامر بشكل صحيح**")
+    success = "**- ❝ الـرد ↫** {} **تـم {} بـ نجـاح 🎆☑️"
     if add_filter(str(event.chat_id), keyword, string, msg_id) is True:
         return await edit_or_reply(event, success.format(keyword, "اضافتـه"))
     remove_filter(str(event.chat_id), keyword)
     if add_filter(str(event.chat_id), keyword, string, msg_id) is True:
         return await edit_or_reply(event, success.format(keyword, "تحديثـه"))
-    await edit_or_reply(event, f"خطأ أثناء تعيين عامل التصفية لـ {keyword}")
+    await edit_or_reply(event, f"**- اووبـس .. لقـد حـدث خطأ اثنـاء إعـداد الـرد** {keyword}")
 
 
 @zedub.zed_cmd(
@@ -191,16 +187,16 @@ async def add_new_filter(event):
 )
 async def on_snip_list(event):
     "To list all filters in that chat."
-    OUT_STR = "There are no filters in this chat."
+    OUT_STR = "** ❈╎لاتوجـد ردود محفوظـه في هـذه الدردشـه ༗**"
     filters = get_filters(event.chat_id)
     for filt in filters:
-        if OUT_STR == "** ❈╎لاتوجـد ردود في هـذه الدردشـه ༗**":
-            OUT_STR = "𓆩 𝑺𝑶𝑼𝑹𝑪𝑬 𝐑𝐄𝐏𝐓𝐇𝐎𝐍 - 𝐑𝐄𝐏𝐓𝐇𝐎𝐍  𝑭𝑰𝑳𝑻𝑬𝑹𝑺 𓆪\n 𓍹ⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧ𓍻\n**  ⪼ قائمـه الـردود في هذه الدردشـه :  **\n"
-        OUT_STR += "⪼ {}  𓆰.\n".format(filt.keyword)
+        if OUT_STR == "** ❈╎لاتوجـد ردود محفوظـه في هـذه الدردشـه ༗**":
+            OUT_STR = "𓆩 𝗦𝗼𝘂𝗿𝗰𝗲 𝗥𝗲𝗽𝘁𝗵𝗼𝗻 - قائمـة الـردود 𓆪\n⋆┄─┄─┄─┄┄─┄─┄─┄─┄┄⋆\n"
+        OUT_STR += "👉 `{}`\n".format(filt.keyword)
     await edit_or_reply(
         event,
         OUT_STR,
-        caption="**⧗╎الـردود المضـافـه في هـذه الدردشـه هـي :**ش",
+        caption="**⧗╎الـردود المضـافـه في هـذه الدردشـه هـي :**",
         file_name="filters.text",
     )
 
@@ -235,6 +231,6 @@ async def on_all_snip_delete(event):
     filters = get_filters(event.chat_id)
     if filters:
         remove_all_filters(event.chat_id)
-        await edit_or_reply(event, "𓆩 𝑺𝑶𝑼𝑹𝑪𝑬 𝐑𝐄𝐏𝐓𝐇𝐎𝐍  - 𝐑𝐄𝐏𝐓𝐇𝐎𝐍  𝑭𝑰𝑳𝑻𝑬𝑹𝑺 𓆪\n 𓍹ⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧ𓍻\n**⪼ تم حذف جـميع الــردود المضـافـهہ بنجـاح☑️**")
+        await edit_or_reply(event, "**⪼ تم حذف جـميع الــردود المضـافـهہ هنـا .. بنجـاح☑️**")
     else:
-        await edit_or_reply(event, "**❈╎عـذراً .. لا توجـد ردود في هـذه المجموعـه**")
+        await edit_or_reply(event, "**⪼ لا توجـد ردود مضـافـهہ في هـذه المجموعـة**")
