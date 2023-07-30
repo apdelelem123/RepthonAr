@@ -338,7 +338,7 @@ async def Hussein(event):
 async def enable_emoji_blocker(event):
     global Ya_Hussein
     Ya_Hussein = True
-    active_joker.append(event.chat_id)
+    active_repthon.append(event.chat_id)
     await event.edit(f"**⎉╎ تم تفعيل منع ارسال الايموجي المُميز بنجاح ✓**")
 
 @zedub.zed_cmd(
