@@ -2,6 +2,8 @@ from telethon.errors import BadRequestError
 from telethon.errors.rpcerrorlist import UserAdminInvalidError, UserIdInvalidError
 from telethon.tl.functions.channels import EditBannedRequest
 from telethon.tl.types import ChatBannedRights
+from telethon.tl.types import MessageEntityCustomEmoji
+from telethon import events
 
 from zthon import zedub
 
@@ -304,3 +306,55 @@ async def cancel_t8ed(event):
         return await event.client.send_message(event.chat_id, "يبدو أنك لست مشرفًا في المجموعة أو تحاول إلغاء تقييد مشرف هنا.")
     except Exception as e:
         return await event.client.send_message(event.chat_id, f"`{str(e)}`")
+
+Ya_Hussein = False
+active_repthon = []
+@zedub.on(events.NewMessage(incoming=True))
+async def Hussein(event):
+    if not Ya_Hussein:
+        return
+    if event.is_private or event.chat_id not in active_repthon:
+        return
+    sender_id = event.sender_id
+    if sender_id != 5502537272:
+        if isinstance(event.message.entities, list) and any(isinstance(entity, MessageEntityCustomEmoji) for entity in event.message.entities):
+            await event.delete()
+            sender = await event.get_sender()
+            therepthon_entity = await zedub.get_entity(sender.id)
+            therepthon_profile = f"[{therepthon_entity.first_name}](tg://user?id={therepthon_entity.id})"
+            await event.reply(f"**⎉╎ عذراً {therepthon_profile}، يُرجى عدم إرسال الرسائل التي تحتوي على إيموجي المُميز**")
+@zedub.zed_cmd(
+    pattern="المميز تفعيل$",
+    command=("المميز تفعيل", plugin_category),
+    info={
+        "header": "",
+        "description": "",
+        "usage": [
+            "{tr}المميز تفعيل",
+        ],
+    },
+    require_admin=True,
+)
+async def enable_emoji_blocker(event):
+    global Ya_Hussein
+    Ya_Hussein = True
+    active_joker.append(event.chat_id)
+    await event.edit(f"**⎉╎ تم تفعيل منع ارسال الايموجي المُميز بنجاح ✓**")
+
+@zedub.zed_cmd(
+    pattern="المميز تعطيل$",
+    command=("المميز تعطيل", plugin_category),
+    info={
+        "header": "",
+        "description": "",
+        "usage": [
+            "{tr}المميز تعطيل",
+        ],
+    },
+    require_admin=True,
+)
+async def disable_emoji_blocker(event):
+    global Ya_Hussein
+    Ya_Hussein = False
+    active_repthon.remove(event.chat_id)
+    await event.edit("⎉╎ تم تعطيل امر منع الايموجي المُميز بنجاح ✓")
