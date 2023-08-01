@@ -59,7 +59,7 @@ async def digitalpicloop():
             downloader.start(blocking=False)
             while not downloader.isFinished():
                 pass
-        zedfont = gvarstatus("DEFAULT_PIC") or "Zara/helpers/styles/Papernotes.ttf" #Code by T.me/zzzzl1l
+        zedfont = gvarstatus("DEFAULT_PIC") or "zthon/helpers/styles/Papernotes.ttf" #Code by T.me/zzzzl1l
         shutil.copy(digitalpic_path, autophoto_path)
         Image.open(autophoto_path)
         current_time = datetime.now().strftime("%I:%M")
@@ -94,8 +94,8 @@ async def autoname_loop():
               namerzfont = gvarstatus("BA_FN") or "𝟭𝟮𝟯𝟰𝟱𝟲𝟳𝟴𝟵𝟬" 
               namefont = namerzfont[normzltext.index(normal)]
               HM = HM.replace(normal, namefont)
-        ZEDT = gvarstatus("CUSTOM_ALIVE_EMZED") or "𓏺 " #Code by T.me/zzzzl1l
-        name = f"{HM}{ZEDT}"
+        ZEDT = gvarstatus("CUSTOM_ALIVE_EMZED") or "𓏺" #Code by T.me/zzzzl1l
+        name = f"{ZEDT}{HM}"
         LOGS.info(name)
         try:
             await zedub(functions.account.UpdateProfileRequest(last_name=name))
