@@ -1,13 +1,33 @@
+from telethon.errors import (
+    ChatAdminRequiredError,
+    FloodWaitError,
+    MessageNotModifiedError,
+    UserAdminInvalidError,
+)
+from telethon.tl import functions
+from asyncio import sleep
+import asyncio
+import requests
+import time
+
+from telethon.tl import types
+from telethon.tl.types import Channel, Chat, User, ChannelParticipantsAdmins
+from telethon.tl.functions.channels import GetFullChannelRequest
+
+from ..helpers.utils import reply_id
+from ..core.logger import logging
+from telethon import events
 from telethon.errors import BadRequestError
 from telethon.errors.rpcerrorlist import UserAdminInvalidError, UserIdInvalidError
 from telethon.tl.functions.channels import EditBannedRequest
+
 from telethon.tl.types import ChatBannedRights
 from telethon.tl.types import MessageEntityCustomEmoji
 from telethon import events
 
 from zthon import zedub
 
-from ..core.managers import edit_or_reply
+from ..core.managers import edit_or_reply, edit_delete
 from ..helpers.utils import _format
 from . import BOTLOG, BOTLOG_CHATID, extract_time, get_user_from_event
 
@@ -358,3 +378,55 @@ async def disable_emoji_blocker(event):
     Ya_Hussein = False
     active_repthon.remove(event.chat_id)
     await event.edit("⎉╎ تم تعطيل امر منع الايموجي المُميز بنجاح ✓")
+
+
+is_Reham = false
+No_group_Repthon = "@Repthon_support"
+@zedub.on(events.NewMessage(incoming=True))
+async def reply_to_hussein(event):
+    if not is_Reham:
+        return
+    if event.is_private or event.chat_id not in active_repthon:
+        return
+    message = event.message
+    if message.reply_to_msg_id:
+        reply_message = await event.get_reply_message()
+        if reply_message.sender_id == event.client.uid:
+            text = message.text.strip()
+            if event.chat.username == No_group_Repthon:
+                return
+            response = requests.get(f'https://gptzaid.zaidbot.repl.co/1/text={text}').text
+            await asyncio.sleep(4)
+            await event.reply(response)
+repthon = False
+async def repthon_nshr(zedub, sleeptimet, chat, message, seconds):
+    global repthon
+    repthon = True
+    while repthon:
+        if message.media:
+            sent_message = await zedub.send_file(chat, message.media, caption=message.text)
+        else:
+            sent_message = await zedub.send_message(chat, message.text)
+        await asyncio.sleep(sleeptimet)
+
+@zedub.zed_cmd(pattern="نشر")
+async def Hussein(event):
+    await event.delete()
+    seconds = "".join(event.text.split(maxsplit=1)[1:]).split(" ", 2)
+    message =  await event.get_reply_message()
+    chat = event.chat_id
+    try:
+        sleeptimet = int(seconds[0])
+    except Exception:
+        return await edit_delete(
+            event, "⌔∮ يجب استخدام كتابة صحيحة الرجاء التاكد من الامر اولا ⚠️"
+        )
+    zedub = event.client
+    global repthon
+    repthon = True
+    await repthon_nshr(zedub, sleeptimet, chat, message, seconds)
+@l313l.ar_cmd(pattern="ايقاف (النشر|نشر)")
+async def stop_aljoker(event):
+    global repthon
+    repthon = False
+    await event.edit("**⎉╎ تم ايقاف النشر التلقائي بنجاح ✓** ")
