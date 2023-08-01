@@ -98,7 +98,7 @@ async def autoname_loop():
         name = f"{HM}{ZEDT}"
         LOGS.info(name)
         try:
-            await zedub(functions.account.UpdateProfileRequest(first_name=name))
+            await zedub(functions.account.UpdateProfileRequest(last_name=name))
         except FloodWaitError as ex:
             LOGS.warning(str(ex))
             await asyncio.sleep(ex.seconds)
@@ -243,7 +243,7 @@ async def _(event):  # sourcery no-metrics
         if gvarstatus("autoname") is not None and gvarstatus("autoname") == "true":
             delgvar("autoname")
             await event.client(
-                functions.account.UpdateProfileRequest(first_name=DEFAULTUSER)
+                functions.account.UpdateProfileRequest(last_name=DEFAULTUSER)
             )
             return await edit_delete(event, "**⎉╎تم إيقـاف الاسـم الوقتـي .. بنجـاح ✓**")
         return await edit_delete(event, "**⎉╎الاسـم الوقتـي .. غيـر مفعـل اصـلاً ؟!**")
@@ -291,7 +291,7 @@ async def _(event):  # sourcery no-metrics
         if gvarstatus("autoname") is not None and gvarstatus("autoname") == "true":
             delgvar("autoname")
             await event.client(
-                functions.account.UpdateProfileRequest(first_name=DEFAULTUSER)
+                functions.account.UpdateProfileRequest(last_name=DEFAULTUSER)
             )
             return await edit_delete(event, "**⎉╎تم إيقـاف الاسـم الوقتـي .. بنجـاح ✓**")
         return await edit_delete(event, "**⎉╎الاسـم الوقتـي .. غيـر مفعـل اصـلاً ؟!**")
