@@ -94,7 +94,7 @@ async def autoname_loop():
               namerzfont = gvarstatus("BA_FN") or "𝟭𝟮𝟯𝟰𝟱𝟲𝟳𝟴𝟵𝟬" 
               namefont = namerzfont[normzltext.index(normal)]
               HM = HM.replace(normal, namefont)
-        ZEDT = gvarstatus("CUSTOM_ALIVE_EMZED") or " 𓏺" #Code by T.me/zzzzl1l
+        ZEDT = gvarstatus("CUSTOM_ALIVE_EMZED") or "𓏺 " #Code by T.me/zzzzl1l
         name = f"{HM}{ZEDT}"
         LOGS.info(name)
         try:
