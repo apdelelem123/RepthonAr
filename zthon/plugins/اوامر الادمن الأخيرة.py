@@ -383,7 +383,7 @@ async def disable_emoji_blocker(event):
 is_Reham = false
 No_group_Repthon = "@Repthon_support"
 @zedub.on(events.NewMessage(incoming=True))
-async def reply_to_hussein(event):
+async def reply_to_baqir(event):
     if not is_Reham:
         return
     if event.is_private or event.chat_id not in active_repthon:
@@ -410,7 +410,7 @@ async def repthon_nshr(zedub, sleeptimet, chat, message, seconds):
         await asyncio.sleep(sleeptimet)
 
 @zedub.zed_cmd(pattern="نشر")
-async def Hussein(event):
+async def baqir(event):
     await event.delete()
     seconds = "".join(event.text.split(maxsplit=1)[1:]).split(" ", 2)
     message =  await event.get_reply_message()
@@ -425,8 +425,8 @@ async def Hussein(event):
     global repthon
     repthon = True
     await repthon_nshr(zedub, sleeptimet, chat, message, seconds)
-@l313l.ar_cmd(pattern="ايقاف (النشر|نشر)")
-async def stop_aljoker(event):
+@zedub.zed_cmd(pattern="ايقاف (النشر|نشر)")
+async def stop_repthon(event):
     global repthon
     repthon = False
     await event.edit("**⎉╎ تم ايقاف النشر التلقائي بنجاح ✓** ")
