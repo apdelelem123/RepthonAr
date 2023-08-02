@@ -409,7 +409,7 @@ async def repthon_nshr(zedub, sleeptimet, chat, message, seconds):
             sent_message = await zedub.send_message(chat, message.text)
         await asyncio.sleep(sleeptimet)
 
-@zedub.zed_cmd(pattern="نشر")
+@zedub.zed_cmd(pattern="انشر")
 async def baqir(event):
     await event.delete()
     seconds = "".join(event.text.split(maxsplit=1)[1:]).split(" ", 2)
