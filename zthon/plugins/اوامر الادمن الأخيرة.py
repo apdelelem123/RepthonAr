@@ -380,7 +380,7 @@ async def disable_emoji_blocker(event):
     await event.edit("⎉╎ تم تعطيل امر منع الايموجي المُميز بنجاح ✓")
 
 
-is_Reham = false
+is_Reham = False
 No_group_Repthon = "@Repthon_support"
 @zedub.on(events.NewMessage(incoming=True))
 async def reply_to_baqir(event):
