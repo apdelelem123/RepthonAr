@@ -1,13 +1,13 @@
-# @Zed-Thon - ZelZal
-# Copyright (C) 2022 ZThon . All Rights Reserved
+# @Repthon - Roger
+# Copyright (C) 2022 RepthonArabic. All Rights Reserved
 #< https://t.me/ZThon >
-# This file is a part of < https://github.com/Zed-Thon/ZelZal/ >
+# This file is a part of < https://github.com/RepthonArabic/RepthonAr/ >
 # PLease read the GNU Affero General Public License in
-# <https://www.github.com/Zed-Thon/ZelZal/blob/master/LICENSE/>.
+# <https://www.github.com/RepthonArabic/RepthonAr/blob/master/LICENSE/>.
 #كـود الصورة الوقتيه كتـابتي وتعديلـي من زمان ومتعوب عليها 
 #+ كـود زخـرفة الصورة الوقتيه
 #+ دددي لا ابلـع حســابك بـانـد بطـعـم الليمــون 🍋😹🤘
-#زلــزال الهيبــه يـ ولــد - حقــوق لـ التــاريـخ ®
+#بــاقــر يـ ولــد - حقــوق لـ التــاريـخ ®
 #هههههههههههههههههههههههههههههههههههههههههههههههههه
 
 import asyncio
@@ -44,9 +44,9 @@ digitalpic_path = os.path.join(os.getcwd(), "zthon", "digital_pic.png")
 autophoto_path = os.path.join(os.getcwd(), "zthon", "photo_pfp.png")
 
 
-NAUTO = gvarstatus("Z_NAUTO") or "(الاسم تلقائي|الاسم الوقتي|اسم وقتي|اسم تلقائي)"
-PAUTO = gvarstatus("Z_PAUTO") or "(البروفايل تلقائي|الصوره الوقتيه|الصورة الوقتية|صوره وقتيه|البروفايل)"
-BAUTO = gvarstatus("Z_BAUTO") or "(البايو تلقائي|البايو الوقتي|بايو وقتي|نبذه وقتيه|النبذه الوقتيه)"
+NAUTO = gvarstatus("R_NAUTO") or "(الاسم تلقائي|الاسم الوقتي|اسم وقتي|اسم تلقائي)"
+PAUTO = gvarstatus("R_PAUTO") or "(البروفايل تلقائي|الصوره الوقتيه|الصورة الوقتية|صوره وقتيه|البروفايل)"
+BAUTO = gvarstatus("R_BAUTO") or "(البايو تلقائي|البايو الوقتي|بايو وقتي|نبذه وقتيه|النبذه الوقتيه)"
 
 
 async def digitalpicloop():
