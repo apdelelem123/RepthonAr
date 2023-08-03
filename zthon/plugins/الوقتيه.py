@@ -1,15 +1,15 @@
-# Zed-Thon
-# Copyright (C) 2022 Zed-Thon . All Rights Reserved
+# Repthon
+# Copyright (C) 2022 RepthonArabic. All Rights Reserved
 #
-# This file is a part of < https://github.com/Zed-Thon/ZelZal/ >
+# This file is a part of < https://github.com/RepthonArabic/RepthonAr/ >
 # PLease read the GNU Affero General Public License in
-# <https://www.github.com/Zed-Thon/ZelZal/blob/master/LICENSE/>.
+# <https://www.github.com/RepthonArabic/RepthonAr/blob/master/LICENSE/>.
 
 """ وصـف الملـف : اوامـر تغييـر زخـارف البروفايـل والاسـم الوقـتي باللغـة العربيـة كـاملة ولا حـرف انكلـش🤘 تخمـط اذكـر المصـدر يولـد
 زخـارف ممطـروقـه بـ امـر واحـد فقـط
-حقـوق للتـاريخ : @ZThon
-@zzzzl1l - كتـابـة الملـف :  زلــزال الهيبــه"""
-#زلـزال_الهيبـه يولـد هههههههههههههههههههههههههه
+حقـوق للتـاريخ : @Repthon
+@E_7_V - كتـابـة الملـف :  روجــر"""
+# بــاقــر يولـد هههههههههههههههههههههههههه
 
 import asyncio
 import math
@@ -63,8 +63,8 @@ ZelzalVP_cmd = (
     "⪼ `.وقتيه 15`\n\n"
     "⪼ `.وقتيه 16`\n\n"
     "⪼ `.وقتيه 17`\n\n\n"
-    "**✾╎لـ رؤيـة زغـارف البروفايـل الوقتـي ↶**  [⦇  اضـغـط هنــا  ⦈](t.me/Zed_Thon) \n\n"
-    "**✾╎لـ رؤيـة زغـارف الاســم الوقتـي ↶**  [⦇  اضـغـط هنــا  ⦈](t.me/Zed_Thon) \n\n\n"
+    "**✾╎لـ رؤيـة زغـارف البروفايـل الوقتـي ↶**  [⦇  اضـغـط هنــا  ⦈](t.me/Repthon_vars/20) \n\n"
+    "**✾╎لـ رؤيـة زغـارف الاســم الوقتـي ↶**  [⦇  اضـغـط هنــا  ⦈](t.me/Repthon_vars/24) \n\n\n"
     "🛃 سيتـم اضـافة المزيـد من الزغـارف بالتحديثـات الجـايـه\n\n"
     "\n𓆩 [𐇮 𓆩✗ ¦ ↱𝐺𝑜𝑙 𝐷. 𝑅𝑜𝑔𝑒𝑟↲ ¦ ✗𓆪 𐇮](t.me/E_7_V) 𓆪"
 )
