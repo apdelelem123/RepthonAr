@@ -23,25 +23,25 @@ from ..sql_helper.globals import gvarstatus
 from . import mention
 
 plugin_category = "العروض"
-STATS = gvarstatus("Z_STATS") or "فحص"
+ALIVE = gvarstatus("R_ALIVE") or "فحص"
 
 
-@zedub.zed_cmd(pattern=f"{STATS}$")
-async def amireallyalive(event):
+@zedub.zed_cmd(pattern=f"{ALIVE}$")
+async def alive(event):
     reply_to_id = await reply_id(event)
     uptime = await get_readable_time((time.time() - StartTime))
     start = datetime.now()
-    zedevent = await edit_or_reply(event, "**⎆┊جـاري .. فحـص البـوت الخـاص بك**")
+    zedevent = await edit_or_reply(event, "**𓅓┊جـاري .. فحـص البـوت الخـاص بك**")
     end = datetime.now()
     ms = (end - start).microseconds / 1000
     _, check_sgnirts = check_data_base_heal_th()
-    Z_EMOJI = gvarstatus("ALIVE_EMOJI") or "✥┊"
-    ALIVE_TEXT = gvarstatus("ALIVE_TEXT") or "** بـوت ريبـــثون 𝐑𝐞𝐩𝐭𝐡𝐨𝐧 يعمـل .. بنجـاح ☑️ 𓆩 **"
+    R_EMOJI = gvarstatus("ALIVE_EMOJI") or "**𓃰┊**"
+    ALIVE_TEXT = gvarstatus("ALIVE_TEXT") or "**𓆩بـوت ريبـــثون 𝐑𝐞𝐩𝐭𝐡𝐨𝐧 يعمـل .. بنجـاح ☑️𓆪**"
     ZED_IMG = gvarstatus("ALIVE_PIC") or "https://graph.org/file/f701e179b634b5a873e8c.mp4"
     zed_caption = gvarstatus("ALIVE_TEMPLATE") or zed_temp
     caption = zed_caption.format(
         ALIVE_TEXT=ALIVE_TEXT,
-        Z_EMOJI=Z_EMOJI,
+        R_EMOJI=R_EMOJI,
         mention=mention,
         uptime=uptime,
         telever=version.__version__,
@@ -72,13 +72,13 @@ async def amireallyalive(event):
 
 zed_temp = """{ALIVE_TEXT}
 
-**{Z_EMOJI} قاعدۿ البيانات :** تعمل بنـجاح
-**{Z_EMOJI} إصـدار التـيليثون :** `{telever}`
-**{Z_EMOJI} إصـدار ريبـــثون :** `{repver}`
-**{Z_EMOJI} إصـدار البـايثون :** `{pyver}`
-**{Z_EMOJI} الوقـت :** `{uptime}`
-**{Z_EMOJI} المسـتخدم:** {mention}
-**{Z_EMOJI} قنـاة السـورس :** [اضغـط هنـا](https://t.me/Repthon)"""
+**{R_EMOJI} قاعدۿ البيانات :** تعمل بنـجاح
+**{R_EMOJI} إصـدار التـيليثون :** `{telever}`
+**{R_EMOJI} إصـدار ريبـــثون :** `{repver}`
+**{R_EMOJI} إصـدار البـايثون :** `{pyver}`
+**{R_EMOJI} الوقـت :** `{uptime}`
+**{R_EMOJI} المسـتخدم:** {mention}
+**{R_EMOJI} قنـاة السـورس :** [اضغـط هنـا](https://t.me/Repthon)"""
 
 
 @zedub.zed_cmd(
@@ -94,12 +94,12 @@ zed_temp = """{ALIVE_TEXT}
 async def amireallyialive(event):
     "A kind of showing bot details by your inline bot"
     reply_to_id = await reply_id(event)
-    Z_EMOJI = gvarstatus("ALIVE_EMOJI") or "✥┊"
+    R_EMOJI = gvarstatus("ALIVE_EMOJI") or "𓅓┊"
     zed_caption = "** بـوت ريبـــثون 𝐑𝐞𝐩𝐭𝐡𝐨𝐧 يعمـل .. بنجـاح ☑️ 𓆩 **\n"
-    zed_caption += f"**{Z_EMOJI} إصـدار التـيليثون :** `{version.__version__}\n`"
-    zed_caption += f"**{Z_EMOJI} إصـدار ريبـــثون :** `{repversion}`\n"
-    zed_caption += f"**{Z_EMOJI} إصـدار البـايثون :** `{python_version()}\n`"
-    zed_caption += f"**{Z_EMOJI} المسـتخدم :** {mention}\n"
+    zed_caption += f"**{R_EMOJI} إصـدار التـيليثون :** `{version.__version__}\n`"
+    zed_caption += f"**{R_EMOJI} إصـدار ريبـــثون :** `{repversion}`\n"
+    zed_caption += f"**{R_EMOJI} إصـدار البـايثون :** `{python_version()}\n`"
+    zed_caption += f"**{R_EMOJI} المسـتخدم :** {mention}\n"
     results = await event.client.inline_query(Config.TG_BOT_USERNAME, zed_caption)
     await results[0].click(event.chat_id, reply_to=reply_to_id, hide_via=True)
     await event.delete()
