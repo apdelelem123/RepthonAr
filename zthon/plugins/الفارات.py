@@ -508,7 +508,7 @@ async def variable(event):
 
 
 # Copyright (C) 2022 Zed-Thon . All Rights Reserved
-@zedub.zed_cmd(pattern="حذف(?:\s|$)([\s\S]*)")
+@zedub.zed_cmd(pattern="حذف فار(?:\s|$)([\s\S]*)")
 async def variable(event):
     input_str = event.text[9:]
     if (input_str == "من" or input_str == "الى" or input_str == "الترحيب") or "رسائلي" in input_str or "رسائله" in input_str:
