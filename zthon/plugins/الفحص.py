@@ -36,7 +36,7 @@ async def alive(event):
     ms = (end - start).microseconds / 1000
     _, check_sgnirts = check_data_base_heal_th()
     R_EMOJI = gvarstatus("ALIVE_EMOJI") or "**𓃰┊**"
-    ALIVE_TEXT = gvarstatus("ALIVE_TEXT") or "** 𓆪 بـوت ريبـــثون 𝐑𝐞𝐩𝐭𝐡𝐨𝐧 يعمـل .. بنجـاح ☑️ 𓆩 **"
+    ALIVE_TEXT = gvarstatus("ALIVE_TEXT") or "** بـوت ريبـــثون 𝐑𝐞𝐩𝐭𝐡𝐨𝐧 يعمـل .. بنجـاح ☑️ 𓆩 **"
     ZED_IMG = gvarstatus("ALIVE_PIC") or "https://graph.org/file/f701e179b634b5a873e8c.mp4"
     zed_caption = gvarstatus("ALIVE_TEMPLATE") or zed_temp
     caption = zed_caption.format(
