@@ -528,7 +528,7 @@ async def variable(event):
     heroku_var = app.config()
     zed = await edit_or_reply(event, "**⎉╎جـاري حـذف الفـار مـن بـوتك 🚮...**")
     # All Rights Reserved for "Zed-Thon" "زلـزال الهيبـه"
-    if input_str == "كليشة الفحص" or input_str == "كليشه الفحص":
+    if input_str == "كليشة الفحص" or input_str == "الفحص":
         variable = gvarstatus("ALIVE_TEMPLATE")
         await asyncio.sleep(1.5)
         if gvarstatus("ALIVE_TEMPLATE") is None:
