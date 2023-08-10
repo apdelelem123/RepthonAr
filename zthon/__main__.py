@@ -22,7 +22,7 @@ print(f"المرخصة بموجب شروط  {zthon.__license__}")
 cmdhr = Config.COMMAND_HAND_LER
 
 try:
-    LOGS.info("⌭ بـدء تنزيـل ريبـــثون ⌭")
+    LOGS.info("⌭ بـدء تنزيـل داعسهم ⌭")
     zedub.loop.run_until_complete(setup_bot())
     LOGS.info("⌭ بـدء تشغيـل البـوت ⌭")
 except Exception as e:
@@ -53,7 +53,7 @@ async def startup_process():
     print("➖➖➖➖➖ 𝐑𝐞𝐩𝐭𝐡𝐨𝐧™ ➖➖➖➖➖")
     print("تـم التنصـيب .. بنجـاح ✓")
     print(
-        f"⌔┊تـم تنصيـب ريبثون يـوزربـوت . . بنجـاح 🧸♥️ \n\n⌔┊تحيـاتي ..  روجر\n⌔┊قنـاة السـورس ↶.\n🌐┊@Repthon"
+        f"⌔┊تـم تنصيـب داعسهم يـوزربـوت . . بنجـاح 🧸♥️ \n\n⌔┊تحيـاتي ..  روجر\n⌔┊قنـاة السـورس ↶.\n🌐┊@AA66Q2"
     )
     print("➖➖➖➖➖ 𝐑𝐞𝐩𝐭𝐡𝐨𝐧™ ➖➖➖➖➖")
     await verifyLoggerGroup()
